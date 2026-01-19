@@ -1,0 +1,16 @@
+.root {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  background: #2f6fed;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.root:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

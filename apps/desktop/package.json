@@ -1,0 +1,15 @@
+{
+  "name": "@kanji-alchemy/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @kanji-alchemy/web dev",
+    "build": "tsc -b",
+    "start": "electron dist/main.js",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.7",
+    "electron": "30.4.0"
+  }
+}

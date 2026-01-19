@@ -1,0 +1,51 @@
+.page {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  color: #4b5563;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  font-weight: 600;
+}
+
+.badgeResult {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.result {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
