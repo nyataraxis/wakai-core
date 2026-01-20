@@ -1,0 +1,50 @@
+name: Release
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      NODE_VERSION: "20"
+      PNPM_VERSION: "9.15.0"
+      WEB_FILTER: "@kanji-alchemy/web"
+      DESKTOP_FILTER: "@kanji-alchemy/desktop"
+      WEB_ARCHIVE: web-dist.tar.gz
+      DESKTOP_ARCHIVE: desktop-dist.tar.gz
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+      - name: Get pnpm store path
+        id: pnpm-store
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-store.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build web and desktop
+        run: pnpm turbo run build --filter=${{ env.WEB_FILTER }} --filter=${{ env.DESKTOP_FILTER }}
+      - name: Package artifacts
+        run: |
+          tar -czf "${{ env.WEB_ARCHIVE }}" -C apps/web/dist .
+          tar -czf "${{ env.DESKTOP_ARCHIVE }}" -C apps/desktop/dist .
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ env.WEB_ARCHIVE }}
+            ${{ env.DESKTOP_ARCHIVE }}
