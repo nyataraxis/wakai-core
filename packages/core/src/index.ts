@@ -1,13 +1,16 @@
 export {
-  createProgress,
   createSignature,
+  deserializePlayerState,
   fuse,
-  type ElementDefinition,
+  serializePlayerState,
+  type ComponentId,
   type ElementId,
-  type EngineContent,
   type FusionFailure,
+  type FusionIndex,
+  type FusionOptions,
   type FusionResult,
-  type FusionRule,
   type FusionSuccess,
-  type ProgressModel
+  type KanjiId,
+  type NormalizationTable,
+  type PlayerState
 } from './engine'

@@ -1,95 +1,125 @@
+/** Element identifiers stored in player inventory. */
 export type ElementId = string
+/** Kanji output identifiers produced by fusions. */
+export type KanjiId = string
+/** Component identifiers used to build signatures. */
+export type ComponentId = string
 
-export interface ElementDefinition {
-  id: ElementId
-  name: string
+/** Map of signature strings to resulting kanji ids. */
+export type FusionIndex = ReadonlyMap<string, KanjiId>
+
+/** Mapping table for normalizing components before signatures. */
+export type NormalizationTable = Readonly<Record<ComponentId, ComponentId>>
+
+/** Persisted player state. */
+export interface PlayerState {
+  unlocked: ElementId[]
+  xp: number
 }
 
-export interface FusionRule {
-  inputA: ElementId
-  inputB: ElementId
-  output: ElementId
-  signature: string
-}
-
-export interface EngineContent {
-  elements: ElementDefinition[]
-  rules: FusionRule[]
-}
-
-export interface ProgressModel {
-  discovered: ElementId[]
-  fusionCount: number
-}
-
+/** Successful fusion result. */
 export interface FusionSuccess {
   success: true
-  outputId: ElementId
-  progress: ProgressModel
+  output: KanjiId
+  signature: string
+  unlockDelta: ElementId[]
+  xpDelta: number
 }
 
+/** Failed fusion result. */
 export interface FusionFailure {
   success: false
-  progress: ProgressModel
+  signature: string
+  unlockDelta: ElementId[]
+  xpDelta: number
 }
 
 export type FusionResult = FusionSuccess | FusionFailure
 
-const SIGNATURE_SEPARATOR = '+'
-const INITIAL_FUSION_COUNT = 0
-
-export const createSignature = (a: ElementId, b: ElementId): string => {
-  const [left, right] = normalizePair(a, b)
-  return `${left}${SIGNATURE_SEPARATOR}${right}`
+/** Inputs for a fusion attempt. */
+export interface FusionOptions {
+  inventory: ReadonlySet<ElementId>
+  components: [ComponentId, ComponentId]
+  normalizationMap: NormalizationTable
+  fusionIndex: FusionIndex
+  xpOnSuccess?: number
+  xpOnFailure?: number
 }
 
-export const createProgress = (initialDiscovered: ElementId[] = []): ProgressModel => {
-  return {
-    discovered: [...initialDiscovered],
-    fusionCount: INITIAL_FUSION_COUNT
-  }
+const SIGNATURE_SEPARATOR = '|'
+const DEFAULT_XP_ON_SUCCESS = 1
+const DEFAULT_XP_ON_FAILURE = 0
+const INITIAL_XP = 0
+
+/** Create a deterministic signature from components and normalization. */
+export const createSignature = (
+  components: ComponentId[],
+  normalizationMap: NormalizationTable
+): string => {
+  const normalized = components.map((component) => normalizeComponent(component, normalizationMap))
+  const sorted = [...normalized].sort(compareComponents)
+  return sorted.join(SIGNATURE_SEPARATOR)
 }
 
-export const fuse = (
-  content: EngineContent,
-  inputA: ElementId,
-  inputB: ElementId,
-  progress: ProgressModel
-): FusionResult => {
-  const signature = createSignature(inputA, inputB)
-  const rule = content.rules.find((item) => item.signature === signature)
-  const nextFusionCount = progress.fusionCount + 1
-  if (!rule) {
+/** Attempt a fusion with inventory and content mappings. */
+export const fuse = ({
+  inventory,
+  components,
+  normalizationMap,
+  fusionIndex,
+  xpOnSuccess,
+  xpOnFailure
+}: FusionOptions): FusionResult => {
+  const signature = createSignature(components, normalizationMap)
+  const output = fusionIndex.get(signature)
+  if (!output) {
     return {
       success: false,
-      progress: {
-        discovered: [...progress.discovered],
-        fusionCount: nextFusionCount
-      }
+      signature,
+      unlockDelta: [],
+      xpDelta: xpOnFailure ?? DEFAULT_XP_ON_FAILURE
     }
   }
 
-  const nextDiscovered = addUnique(progress.discovered, rule.output)
   return {
     success: true,
-    outputId: rule.output,
-    progress: {
-      discovered: nextDiscovered,
-      fusionCount: nextFusionCount
-    }
+    output,
+    signature,
+    unlockDelta: inventory.has(output) ? [] : [output],
+    xpDelta: xpOnSuccess ?? DEFAULT_XP_ON_SUCCESS
   }
 }
 
-const normalizePair = (a: ElementId, b: ElementId): [ElementId, ElementId] => {
-  if (a <= b) {
-    return [a, b]
+/** Serialize player state to JSON. */
+export const serializePlayerState = (state: PlayerState): string => JSON.stringify(state)
+
+/** Deserialize player state from JSON. */
+export const deserializePlayerState = (value: string): PlayerState => {
+  const parsed = safeParse(value)
+  return {
+    unlocked: Array.isArray(parsed?.unlocked)
+      ? parsed.unlocked.map((entry) => String(entry))
+      : [],
+    xp: typeof parsed?.xp === 'number' ? parsed.xp : INITIAL_XP
   }
-  return [b, a]
 }
 
-const addUnique = (items: ElementId[], value: ElementId): ElementId[] => {
-  if (items.includes(value)) {
-    return [...items]
+const normalizeComponent = (
+  component: ComponentId,
+  normalizationMap: NormalizationTable
+): ComponentId => normalizationMap[component] ?? component
+
+const compareComponents = (left: ComponentId, right: ComponentId): number => {
+  if (left === right) {
+    return 0
   }
-  return [...items, value]
+  return left < right ? -1 : 1
+}
+
+const safeParse = (value: string): Partial<PlayerState> | null => {
+  try {
+    return JSON.parse(value) as Partial<PlayerState>
+  } catch {
+    return null
+  }
 }

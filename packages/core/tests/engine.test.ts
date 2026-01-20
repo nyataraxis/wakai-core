@@ -1,52 +1,36 @@
 import { describe, expect, it } from 'vitest'
-import {
-  createProgress,
-  createSignature,
-  fuse,
-  type EngineContent,
-  type ElementDefinition,
-  type FusionRule
-} from '../src'
+import { createSignature, fuse, type FusionIndex, type NormalizationTable } from '../src'
 
-const ELEMENT_WATER = 'water'
-const ELEMENT_FIRE = 'fire'
-const ELEMENT_STEAM = 'steam'
-
-const elements: ElementDefinition[] = [
-  { id: ELEMENT_WATER, name: 'Water' },
-  { id: ELEMENT_FIRE, name: 'Fire' },
-  { id: ELEMENT_STEAM, name: 'Steam' }
-]
-
-const rules: FusionRule[] = [
-  {
-    inputA: ELEMENT_WATER,
-    inputB: ELEMENT_FIRE,
-    output: ELEMENT_STEAM,
-    signature: createSignature(ELEMENT_WATER, ELEMENT_FIRE)
-  }
-]
-
-const content: EngineContent = {
-  elements,
-  rules
+const normalizationMap: NormalizationTable = {
+  氵: '水'
 }
 
-describe('core engine', () => {
-  it('creates deterministic signatures', () => {
-    const signatureA = createSignature(ELEMENT_WATER, ELEMENT_FIRE)
-    const signatureB = createSignature(ELEMENT_FIRE, ELEMENT_WATER)
-    expect(signatureA).toBe(signatureB)
+describe('kanji alchemy core', () => {
+  it('preserves multiplicity in signatures', () => {
+    const signature = createSignature(['木', '木', '人'], {})
+    expect(signature).toBe('人|木|木')
   })
 
-  it('fuses elements and updates progress', () => {
-    const progress = createProgress([ELEMENT_WATER, ELEMENT_FIRE])
-    const result = fuse(content, ELEMENT_WATER, ELEMENT_FIRE, progress)
+  it('normalizes components before signatures', () => {
+    const signature = createSignature(['氵', '木'], normalizationMap)
+    expect(signature).toBe('木|水')
+  })
+
+  it('looks up fusion results by signature', () => {
+    const signature = createSignature(['人', '木'], {})
+    const fusionIndex: FusionIndex = new Map([[signature, '休']])
+    const inventory = new Set(['人', '木'])
+    const result = fuse({
+      inventory,
+      components: ['人', '木'],
+      normalizationMap: {},
+      fusionIndex
+    })
+
     expect(result.success).toBe(true)
     if (result.success) {
-      expect(result.outputId).toBe(ELEMENT_STEAM)
-      expect(result.progress.discovered).toContain(ELEMENT_STEAM)
-      expect(result.progress.fusionCount).toBe(1)
+      expect(result.output).toBe('休')
+      expect(result.unlockDelta).toEqual(['休'])
     }
   })
 })
