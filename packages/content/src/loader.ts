@@ -1,18 +1,37 @@
-import type { ContentBundle, ContentMeta, ContentVersion } from './schema'
+import { ContentSchema, type ContentBundle } from './schema'
 
-const DEFAULT_VERSION: ContentVersion = '0.1.0'
-const DEFAULT_UPDATED_AT = '1970-01-01T00:00:00.000Z'
-
-export const createContentMeta = (version: ContentVersion = DEFAULT_VERSION): ContentMeta => {
-  return {
-    version,
-    updatedAt: DEFAULT_UPDATED_AT
-  }
+export interface ContentCache {
+  get: (key: string) => Promise<ContentBundle | null>
+  set: (key: string, value: ContentBundle) => Promise<void>
 }
 
-export const loadContent = (bundle: ContentBundle): ContentBundle => {
-  if (!bundle.meta || !bundle.elements || !bundle.rules) {
-    throw new Error('Invalid content bundle')
+export interface RemoteContentSource {
+  cacheKey: string
+  fetchContent: () => Promise<unknown>
+  cache?: ContentCache
+}
+
+const parseJsonIfString = (value: unknown): unknown => {
+  if (typeof value !== 'string') {
+    return value
   }
-  return bundle
+  return JSON.parse(value)
+}
+
+export const loadEmbeddedContent = (value: unknown): ContentBundle => {
+  const parsed = parseJsonIfString(value)
+  return ContentSchema.parse(parsed)
+}
+
+export const loadRemoteContent = async (source: RemoteContentSource): Promise<ContentBundle> => {
+  const cached = source.cache ? await source.cache.get(source.cacheKey) : null
+  if (cached) {
+    return cached
+  }
+  const data = await source.fetchContent()
+  const parsed = loadEmbeddedContent(data)
+  if (source.cache) {
+    await source.cache.set(source.cacheKey, parsed)
+  }
+  return parsed
 }

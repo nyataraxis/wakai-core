@@ -1,9 +1,10 @@
-export { createContentMeta, loadContent } from './loader'
+export { getDefaultContent } from './defaultContent'
+export { loadEmbeddedContent, loadRemoteContent } from './loader'
 export { isCompatible } from './versioning'
+export { ContentSchema, KanjiEntrySchema } from './schema'
 export type {
   ContentBundle,
-  ContentMeta,
   ContentVersion,
-  ElementRecord,
-  FusionRuleRecord
+  FusionIndexRecord,
+  KanjiEntry
 } from './schema'
