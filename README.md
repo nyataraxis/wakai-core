@@ -22,6 +22,26 @@ pnpm test
 pnpm lint
 ```
 
+## Monorepo layout
+
+- `apps/web` Vite + React web app
+- `apps/mobile` Capacitor wrapper for the web build
+- `apps/desktop` Electron wrapper for the web build
+- `packages/core` core engine and progression logic
+- `packages/content` content schema and loaders
+- `packages/platform` platform adapters (ads, IAP, analytics)
+- `packages/ui` shared React UI components
+
+## Subproject READMEs
+
+- `apps/web/README.md`
+- `apps/mobile/README.md`
+- `apps/desktop/README.md`
+- `packages/core/README.md`
+- `packages/content/README.md`
+- `packages/platform/README.md`
+- `packages/ui/README.md`
+
 ## Apps
 
 ### Web

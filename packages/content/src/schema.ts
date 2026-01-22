@@ -18,12 +18,15 @@ export const KanjiEntrySchema = z.object({
 
 export type KanjiEntry = z.infer<typeof KanjiEntrySchema>
 
-const normalizationMapSchema: z.ZodType<NormalizationTable> = z.record(componentIdSchema)
+const normalizationMapSchema: z.ZodType<NormalizationTable> = z.record(
+  componentIdSchema,
+  componentIdSchema
+)
 
 export const ContentSchema = z.object({
   contentVersion: contentVersionSchema,
   kanji: z.array(KanjiEntrySchema),
-  fusionIndex: z.record(kanjiIdSchema),
+  fusionIndex: z.record(z.string(), kanjiIdSchema),
   normalizationMap: normalizationMapSchema
 })
 

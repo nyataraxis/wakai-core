@@ -1,5 +1,5 @@
 import { app, BrowserWindow } from 'electron'
-import path from 'node:path'
+import * as path from 'node:path'
 
 const WINDOW_WIDTH = 1280
 const WINDOW_HEIGHT = 720

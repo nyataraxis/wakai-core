@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Card, PrimaryButton } from '@kanji-alchemy/ui'
 import {
-  createProgress,
   createSignature,
   fuse,
-  type EngineContent,
-  type FusionResult
+  type FusionIndex,
+  type FusionResult,
+  type NormalizationTable
 } from '@kanji-alchemy/core'
 import styles from './App.module.css'
 
@@ -13,29 +13,21 @@ const ELEMENT_WATER = 'water'
 const ELEMENT_FIRE = 'fire'
 const ELEMENT_STEAM = 'steam'
 
-const content: EngineContent = {
-  elements: [
-    { id: ELEMENT_WATER, name: 'Water' },
-    { id: ELEMENT_FIRE, name: 'Fire' },
-    { id: ELEMENT_STEAM, name: 'Steam' }
-  ],
-  rules: [
-    {
-      inputA: ELEMENT_WATER,
-      inputB: ELEMENT_FIRE,
-      output: ELEMENT_STEAM,
-      signature: createSignature(ELEMENT_WATER, ELEMENT_FIRE)
-    }
-  ]
-}
-
-const initialProgress = createProgress([ELEMENT_WATER, ELEMENT_FIRE])
+const normalizationMap: NormalizationTable = {}
+const signature = createSignature([ELEMENT_WATER, ELEMENT_FIRE], normalizationMap)
+const fusionIndex: FusionIndex = new Map([[signature, ELEMENT_STEAM]])
+const inventory = new Set([ELEMENT_WATER, ELEMENT_FIRE])
 
 export const App = () => {
   const [result, setResult] = useState<FusionResult | null>(null)
 
   const handleFusion = () => {
-    const next = fuse(content, ELEMENT_WATER, ELEMENT_FIRE, initialProgress)
+    const next = fuse({
+      inventory,
+      components: [ELEMENT_WATER, ELEMENT_FIRE],
+      normalizationMap,
+      fusionIndex
+    })
     setResult(next)
   }
 
@@ -54,7 +46,7 @@ export const App = () => {
         <PrimaryButton label="Fuse Elements" onClick={handleFusion} />
         <div className={styles.result}>
           {result?.success
-            ? `Result: ${result.outputId}`
+            ? `Result: ${result.output}`
             : result
               ? 'No rule found'
               : 'Tap to run a fusion'}
