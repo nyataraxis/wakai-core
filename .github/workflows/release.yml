@@ -12,8 +12,8 @@ jobs:
     env:
       NODE_VERSION: "20"
       PNPM_VERSION: "9.15.0"
-      WEB_FILTER: "@kanji-alchemy/web"
-      DESKTOP_FILTER: "@kanji-alchemy/desktop"
+      WEB_FILTER: "@wakai-core/web"
+      DESKTOP_FILTER: "@wakai-core/desktop"
       WEB_ARCHIVE: web-dist.tar.gz
       DESKTOP_ARCHIVE: desktop-dist.tar.gz
     steps:

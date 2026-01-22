@@ -1,14 +1,14 @@
 # Web App
 
-Vite + React web client for Kanji Alchemy. This is the primary application target and the source build for the mobile and desktop wrappers.
+Vite + React web client for Wakai Core. This is the primary application target and the source build for the mobile and desktop wrappers.
 
 ## Scripts
 
 ```bash
-pnpm --filter @kanji-alchemy/web dev
-pnpm --filter @kanji-alchemy/web build
-pnpm --filter @kanji-alchemy/web preview
-pnpm --filter @kanji-alchemy/web lint
+pnpm --filter @wakai-core/web dev
+pnpm --filter @wakai-core/web build
+pnpm --filter @wakai-core/web preview
+pnpm --filter @wakai-core/web lint
 ```
 
 ## Entry points
@@ -27,7 +27,7 @@ pnpm --filter @kanji-alchemy/web lint
 
 ## Related packages
 
-- `@kanji-alchemy/core`
-- `@kanji-alchemy/content`
-- `@kanji-alchemy/platform`
-- `@kanji-alchemy/ui`
+- `@wakai-core/core`
+- `@wakai-core/content`
+- `@wakai-core/platform`
+- `@wakai-core/ui`

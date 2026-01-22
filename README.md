@@ -1,4 +1,4 @@
-# Kanji Alchemy
+# Wakai Core
 
 Web-first, mobile-first monorepo with a shared TypeScript core engine.
 
@@ -47,9 +47,9 @@ pnpm lint
 ### Web
 
 ```bash
-pnpm --filter @kanji-alchemy/web dev
-pnpm --filter @kanji-alchemy/web build
-pnpm --filter @kanji-alchemy/web preview
+pnpm --filter @wakai-core/web dev
+pnpm --filter @wakai-core/web build
+pnpm --filter @wakai-core/web preview
 ```
 
 Build output: `apps/web/dist`
@@ -57,10 +57,10 @@ Build output: `apps/web/dist`
 ### Mobile (Capacitor)
 
 ```bash
-pnpm --filter @kanji-alchemy/mobile build
-pnpm --filter @kanji-alchemy/mobile sync
-pnpm --filter @kanji-alchemy/mobile open:android
-pnpm --filter @kanji-alchemy/mobile open:ios
+pnpm --filter @wakai-core/mobile build
+pnpm --filter @wakai-core/mobile sync
+pnpm --filter @wakai-core/mobile open:android
+pnpm --filter @wakai-core/mobile open:ios
 ```
 
 Uses the web build output from `apps/web/dist`.
@@ -68,18 +68,18 @@ Uses the web build output from `apps/web/dist`.
 ### Desktop (Electron)
 
 ```bash
-pnpm --filter @kanji-alchemy/desktop build
-pnpm --filter @kanji-alchemy/desktop start
+pnpm --filter @wakai-core/desktop build
+pnpm --filter @wakai-core/desktop start
 ```
 
 Uses the web build output from `apps/web/dist`.
 
 ## Packages
 
-- `@kanji-alchemy/core` shared fusion engine with progress model
-- `@kanji-alchemy/content` content schema and loaders
-- `@kanji-alchemy/platform` ads, IAP, analytics adapters with platform stubs
-- `@kanji-alchemy/ui` shared React UI components with CSS modules
+- `@wakai-core/core` shared fusion engine with progress model
+- `@wakai-core/content` content schema and loaders
+- `@wakai-core/platform` ads, IAP, analytics adapters with platform stubs
+- `@wakai-core/ui` shared React UI components with CSS modules
 
 ## Release tags
 

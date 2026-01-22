@@ -1,5 +1,5 @@
 {
-  "name": "@kanji-alchemy/web",
+  "name": "@wakai-core/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,10 @@
     "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
-    "@kanji-alchemy/content": "workspace:*",
-    "@kanji-alchemy/core": "workspace:*",
-    "@kanji-alchemy/platform": "workspace:*",
-    "@kanji-alchemy/ui": "workspace:*",
+    "@wakai-core/content": "workspace:*",
+    "@wakai-core/core": "workspace:*",
+    "@wakai-core/platform": "workspace:*",
+    "@wakai-core/ui": "workspace:*",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },

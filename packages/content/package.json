@@ -1,10 +1,10 @@
 {
-  "name": "@kanji-alchemy/content",
+  "name": "@wakai-core/content",
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@kanji-alchemy/core": "workspace:*",
+    "@wakai-core/core": "workspace:*",
     "zod": "latest"
   },
   "scripts": {

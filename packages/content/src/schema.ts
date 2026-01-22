@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { ComponentId, KanjiId, NormalizationTable } from '@kanji-alchemy/core'
+import type { ComponentId, KanjiId, NormalizationTable } from '@wakai-core/core'
 
 export type ContentVersion = string
 

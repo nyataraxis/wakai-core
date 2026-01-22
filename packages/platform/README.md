@@ -5,8 +5,8 @@ Platform adapters and stubs for ads, IAP, and analytics across web, mobile, and 
 ## Scripts
 
 ```bash
-pnpm --filter @kanji-alchemy/platform build
-pnpm --filter @kanji-alchemy/platform lint
+pnpm --filter @wakai-core/platform build
+pnpm --filter @wakai-core/platform lint
 ```
 
 ## Entry points

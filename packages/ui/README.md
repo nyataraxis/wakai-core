@@ -5,8 +5,8 @@ Shared React UI components and CSS modules used across apps.
 ## Scripts
 
 ```bash
-pnpm --filter @kanji-alchemy/ui build
-pnpm --filter @kanji-alchemy/ui lint
+pnpm --filter @wakai-core/ui build
+pnpm --filter @wakai-core/ui lint
 ```
 
 ## Entry points

@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Card, PrimaryButton } from '@kanji-alchemy/ui'
+import { Card, PrimaryButton } from '@wakai-core/ui'
 import {
   createSignature,
   fuse,
   type FusionIndex,
   type FusionResult,
   type NormalizationTable
-} from '@kanji-alchemy/core'
+} from '@wakai-core/core'
 import styles from './App.module.css'
 
 const ELEMENT_WATER = 'water'
@@ -34,7 +34,7 @@ export const App = () => {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Kanji Alchemy</h1>
+        <h1 className={styles.title}>Wakai Core</h1>
         <p className={styles.subtitle}>Offline-first fusion demo</p>
       </header>
       <Card title="Sample Fusion">
