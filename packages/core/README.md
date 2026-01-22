@@ -5,9 +5,9 @@ Shared TypeScript engine that drives progression and fusion logic.
 ## Scripts
 
 ```bash
-pnpm --filter @kanji-alchemy/core build
-pnpm --filter @kanji-alchemy/core test
-pnpm --filter @kanji-alchemy/core lint
+pnpm --filter @wakai-core/core build
+pnpm --filter @wakai-core/core test
+pnpm --filter @wakai-core/core lint
 ```
 
 ## Entry points

@@ -1,5 +1,5 @@
-import { createSignature } from '@kanji-alchemy/core'
-import type { ComponentId, KanjiId, NormalizationTable } from '@kanji-alchemy/core'
+import { createSignature } from '@wakai-core/core'
+import type { ComponentId, KanjiId, NormalizationTable } from '@wakai-core/core'
 import type { ContentBundle, FusionIndexRecord, KanjiEntry } from './schema'
 
 const DEFAULT_CONTENT_VERSION = '0.1.0'

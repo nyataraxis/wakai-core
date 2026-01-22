@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       manifest: {
-        name: 'Kanji Alchemy',
-        short_name: 'Kanji Alchemy',
+        name: 'Wakai Core',
+        short_name: 'Wakai Core',
         start_url: '.',
         display: 'standalone',
         background_color: '#f3f4f6',

@@ -1,9 +1,9 @@
 {
-  "name": "@kanji-alchemy/mobile",
+  "name": "@wakai-core/mobile",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter @kanji-alchemy/web build",
+    "build": "pnpm --filter @wakai-core/web build",
     "sync": "cap sync",
     "open:android": "cap open android",
     "open:ios": "cap open ios",

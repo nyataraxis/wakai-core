@@ -13,7 +13,7 @@ jobs:
     env:
       NODE_VERSION: "20"
       PNPM_VERSION: "9.15.0"
-      TURBO_FILTER: "@kanji-alchemy/web"
+      TURBO_FILTER: "@wakai-core/web"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

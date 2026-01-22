@@ -1,9 +1,9 @@
 {
-  "name": "@kanji-alchemy/desktop",
+  "name": "@wakai-core/desktop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter @kanji-alchemy/web dev",
+    "dev": "pnpm --filter @wakai-core/web dev",
     "build": "tsc -b",
     "start": "electron dist/main.js",
     "lint": "eslint . --max-warnings=0"

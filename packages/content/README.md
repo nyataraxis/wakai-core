@@ -1,12 +1,12 @@
 # Content Package
 
-Content schema, loaders, and versioning for Kanji Alchemy.
+Content schema, loaders, and versioning for Wakai Core.
 
 ## Scripts
 
 ```bash
-pnpm --filter @kanji-alchemy/content build
-pnpm --filter @kanji-alchemy/content lint
+pnpm --filter @wakai-core/content build
+pnpm --filter @wakai-core/content lint
 ```
 
 ## Entry points
