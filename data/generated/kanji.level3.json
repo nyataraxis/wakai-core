@@ -1,0 +1,1927 @@
+{
+  "contentVersion": "1.0.0",
+  "level": 3,
+  "kanji": {
+    "不": {
+      "id": "k-04e0d",
+      "components": [
+        "一",
+        "丿",
+        "丨"
+      ],
+      "svgFile": "04e0d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "両": {
+      "id": "k-04e21",
+      "components": [
+        "一",
+        "冂",
+        "山"
+      ],
+      "svgFile": "04e21.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "事": {
+      "id": "k-04e8b",
+      "components": [
+        "口",
+        "⺕",
+        "亅"
+      ],
+      "svgFile": "04e8b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "亜": {
+      "id": "k-04e9c",
+      "components": [
+        "二",
+        "口",
+        "二"
+      ],
+      "svgFile": "04e9c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "亭": {
+      "id": "k-04ead",
+      "components": [
+        "亠",
+        "冖",
+        "丁"
+      ],
+      "svgFile": "04ead.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "來": {
+      "id": "k-04f86",
+      "components": [
+        "木",
+        "从",
+        "木"
+      ],
+      "svgFile": "04f86.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "兎": {
+      "id": "k-0514e",
+      "components": [
+        "丿",
+        "儿",
+        "丶"
+      ],
+      "svgFile": "0514e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "册": {
+      "id": "k-0518c",
+      "components": [
+        "冂",
+        "冂",
+        "一"
+      ],
+      "svgFile": "0518c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "冏": {
+      "id": "k-0518f",
+      "components": [
+        "冂",
+        "儿",
+        "口"
+      ],
+      "svgFile": "0518f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "前": {
+      "id": "k-0524d",
+      "components": [
+        "八",
+        "月",
+        "刀"
+      ],
+      "svgFile": "0524d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匝": {
+      "id": "k-0531d",
+      "components": [
+        "匚",
+        "巾",
+        "匚"
+      ],
+      "svgFile": "0531d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匠": {
+      "id": "k-05320",
+      "components": [
+        "匚",
+        "斤",
+        "匚"
+      ],
+      "svgFile": "05320.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匡": {
+      "id": "k-05321",
+      "components": [
+        "匚",
+        "王",
+        "匚"
+      ],
+      "svgFile": "05321.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匣": {
+      "id": "k-05323",
+      "components": [
+        "匚",
+        "甲",
+        "匚"
+      ],
+      "svgFile": "05323.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匪": {
+      "id": "k-0532a",
+      "components": [
+        "匚",
+        "非",
+        "匚"
+      ],
+      "svgFile": "0532a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匯": {
+      "id": "k-0532f",
+      "components": [
+        "匚",
+        "淮",
+        "匚"
+      ],
+      "svgFile": "0532f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匱": {
+      "id": "k-05331",
+      "components": [
+        "匚",
+        "貴",
+        "匚"
+      ],
+      "svgFile": "05331.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匳": {
+      "id": "k-05333",
+      "components": [
+        "匚",
+        "僉",
+        "匚"
+      ],
+      "svgFile": "05333.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匹": {
+      "id": "k-05339",
+      "components": [
+        "匸",
+        "儿",
+        "匸"
+      ],
+      "svgFile": "05339.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "区": {
+      "id": "k-0533a",
+      "components": [
+        "匸",
+        "乂",
+        "匸"
+      ],
+      "svgFile": "0533a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "医": {
+      "id": "k-0533b",
+      "components": [
+        "匸",
+        "矢",
+        "匸"
+      ],
+      "svgFile": "0533b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "匿": {
+      "id": "k-0533f",
+      "components": [
+        "匸",
+        "若",
+        "匸"
+      ],
+      "svgFile": "0533f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "區": {
+      "id": "k-05340",
+      "components": [
+        "匸",
+        "品",
+        "匸"
+      ],
+      "svgFile": "05340.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "半": {
+      "id": "k-0534a",
+      "components": [
+        "丶",
+        "二",
+        "十"
+      ],
+      "svgFile": "0534a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "卵": {
+      "id": "k-05375",
+      "components": [
+        "卯",
+        "丶",
+        "卯"
+      ],
+      "svgFile": "05375.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "叉": {
+      "id": "k-053c9",
+      "components": [
+        "又",
+        "丶",
+        "又"
+      ],
+      "svgFile": "053c9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "可": {
+      "id": "k-053ef",
+      "components": [
+        "丁",
+        "口",
+        "丁"
+      ],
+      "svgFile": "053ef.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "同": {
+      "id": "k-0540c",
+      "components": [
+        "冂",
+        "一",
+        "口"
+      ],
+      "svgFile": "0540c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "吏": {
+      "id": "k-0540f",
+      "components": [
+        "丈",
+        "口",
+        "丈"
+      ],
+      "svgFile": "0540f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "咢": {
+      "id": "k-054a2",
+      "components": [
+        "口",
+        "口",
+        "二"
+      ],
+      "svgFile": "054a2.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "咸": {
+      "id": "k-054b8",
+      "components": [
+        "戍",
+        "口",
+        "戍"
+      ],
+      "svgFile": "054b8.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "哉": {
+      "id": "k-054c9",
+      "components": [
+        "𢦏",
+        "口",
+        "𢦏"
+      ],
+      "svgFile": "054c9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "嗅": {
+      "id": "k-055c5",
+      "components": [
+        "口",
+        "臭",
+        "犬"
+      ],
+      "svgFile": "055c5.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囚": {
+      "id": "k-056da",
+      "components": [
+        "囗",
+        "人",
+        "囗"
+      ],
+      "svgFile": "056da.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "四": {
+      "id": "k-056db",
+      "components": [
+        "囗",
+        "儿",
+        "囗"
+      ],
+      "svgFile": "056db.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "回": {
+      "id": "k-056de",
+      "components": [
+        "囗",
+        "口",
+        "囗"
+      ],
+      "svgFile": "056de.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "因": {
+      "id": "k-056e0",
+      "components": [
+        "囗",
+        "大",
+        "囗"
+      ],
+      "svgFile": "056e0.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "団": {
+      "id": "k-056e3",
+      "components": [
+        "囗",
+        "寸",
+        "囗"
+      ],
+      "svgFile": "056e3.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囮": {
+      "id": "k-056ee",
+      "components": [
+        "囗",
+        "化",
+        "囗"
+      ],
+      "svgFile": "056ee.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "困": {
+      "id": "k-056f0",
+      "components": [
+        "囗",
+        "木",
+        "囗"
+      ],
+      "svgFile": "056f0.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囲": {
+      "id": "k-056f2",
+      "components": [
+        "囗",
+        "井",
+        "囗"
+      ],
+      "svgFile": "056f2.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囹": {
+      "id": "k-056f9",
+      "components": [
+        "囗",
+        "令",
+        "囗"
+      ],
+      "svgFile": "056f9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "固": {
+      "id": "k-056fa",
+      "components": [
+        "囗",
+        "古",
+        "囗"
+      ],
+      "svgFile": "056fa.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "国": {
+      "id": "k-056fd",
+      "components": [
+        "囗",
+        "玉",
+        "囗"
+      ],
+      "svgFile": "056fd.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囿": {
+      "id": "k-056ff",
+      "components": [
+        "囗",
+        "有",
+        "囗"
+      ],
+      "svgFile": "056ff.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圀": {
+      "id": "k-05700",
+      "components": [
+        "四",
+        "方",
+        "四"
+      ],
+      "svgFile": "05700.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圃": {
+      "id": "k-05703",
+      "components": [
+        "囗",
+        "甫",
+        "囗"
+      ],
+      "svgFile": "05703.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圄": {
+      "id": "k-05704",
+      "components": [
+        "囗",
+        "吾",
+        "囗"
+      ],
+      "svgFile": "05704.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圈": {
+      "id": "k-05708",
+      "components": [
+        "囗",
+        "卷",
+        "囗"
+      ],
+      "svgFile": "05708.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圉": {
+      "id": "k-05709",
+      "components": [
+        "囗",
+        "幸",
+        "囗"
+      ],
+      "svgFile": "05709.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "國": {
+      "id": "k-0570b",
+      "components": [
+        "囗",
+        "或",
+        "囗"
+      ],
+      "svgFile": "0570b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圍": {
+      "id": "k-0570d",
+      "components": [
+        "囗",
+        "韋",
+        "囗"
+      ],
+      "svgFile": "0570d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圏": {
+      "id": "k-0570f",
+      "components": [
+        "囗",
+        "巻",
+        "囗"
+      ],
+      "svgFile": "0570f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "園": {
+      "id": "k-05712",
+      "components": [
+        "囗",
+        "袁",
+        "囗"
+      ],
+      "svgFile": "05712.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圓": {
+      "id": "k-05713",
+      "components": [
+        "囗",
+        "員",
+        "囗"
+      ],
+      "svgFile": "05713.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "團": {
+      "id": "k-05718",
+      "components": [
+        "囗",
+        "專",
+        "囗"
+      ],
+      "svgFile": "05718.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "圜": {
+      "id": "k-0571c",
+      "components": [
+        "囗",
+        "睘",
+        "囗"
+      ],
+      "svgFile": "0571c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "复": {
+      "id": "k-0590d",
+      "components": [
+        "𠂉",
+        "日",
+        "夂"
+      ],
+      "svgFile": "0590d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "夐": {
+      "id": "k-05910",
+      "components": [
+        "𠂊",
+        "目",
+        "夂"
+      ],
+      "svgFile": "05910.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "夷": {
+      "id": "k-05937",
+      "components": [
+        "大",
+        "弓",
+        "大"
+      ],
+      "svgFile": "05937.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "夾": {
+      "id": "k-0593e",
+      "components": [
+        "大",
+        "从",
+        "大"
+      ],
+      "svgFile": "0593e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "威": {
+      "id": "k-05a01",
+      "components": [
+        "戍",
+        "女",
+        "戍"
+      ],
+      "svgFile": "05a01.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "寿": {
+      "id": "k-05bff",
+      "components": [
+        "三",
+        "丿",
+        "寸"
+      ],
+      "svgFile": "05bff.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "尨": {
+      "id": "k-05c28",
+      "components": [
+        "尤",
+        "彡",
+        "尤"
+      ],
+      "svgFile": "05c28.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "巨": {
+      "id": "k-05de8",
+      "components": [
+        "匚",
+        "匚",
+        "匚"
+      ],
+      "svgFile": "05de8.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "巫": {
+      "id": "k-05deb",
+      "components": [
+        "工",
+        "从",
+        "工"
+      ],
+      "svgFile": "05deb.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "師": {
+      "id": "k-05e2b",
+      "components": [
+        "丿",
+        "丨",
+        "巾"
+      ],
+      "svgFile": "05e2b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "帶": {
+      "id": "k-05e36",
+      "components": [
+        "廿",
+        "冖",
+        "巾"
+      ],
+      "svgFile": "05e36.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "年": {
+      "id": "k-05e74",
+      "components": [
+        "丿",
+        "干",
+        "干"
+      ],
+      "svgFile": "05e74.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "幾": {
+      "id": "k-05e7e",
+      "components": [
+        "幺",
+        "幺",
+        "戍"
+      ],
+      "svgFile": "05e7e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "廾": {
+      "id": "k-05efe",
+      "components": [
+        "十",
+        "丿",
+        "十"
+      ],
+      "svgFile": "05efe.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "弌": {
+      "id": "k-05f0c",
+      "components": [
+        "弋",
+        "一",
+        "弋"
+      ],
+      "svgFile": "05f0c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "弍": {
+      "id": "k-05f0d",
+      "components": [
+        "弋",
+        "二",
+        "弋"
+      ],
+      "svgFile": "05f0d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "式": {
+      "id": "k-05f0f",
+      "components": [
+        "弋",
+        "工",
+        "弋"
+      ],
+      "svgFile": "05f0f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "弗": {
+      "id": "k-05f17",
+      "components": [
+        "弓",
+        "丿",
+        "丨"
+      ],
+      "svgFile": "05f17.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "彡": {
+      "id": "k-05f61",
+      "components": [
+        "丿",
+        "丿",
+        "丿"
+      ],
+      "svgFile": "05f61.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "彦": {
+      "id": "k-05f66",
+      "components": [
+        "立",
+        "厂",
+        "彡"
+      ],
+      "svgFile": "05f66.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "必": {
+      "id": "k-05fc5",
+      "components": [
+        "心",
+        "丿",
+        "心"
+      ],
+      "svgFile": "05fc5.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "應": {
+      "id": "k-061c9",
+      "components": [
+        "广",
+        "雁",
+        "心"
+      ],
+      "svgFile": "061c9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戈": {
+      "id": "k-06208",
+      "components": [
+        "弋",
+        "丿",
+        "弋"
+      ],
+      "svgFile": "06208.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戌": {
+      "id": "k-0620c",
+      "components": [
+        "戊",
+        "一",
+        "戊"
+      ],
+      "svgFile": "0620c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戍": {
+      "id": "k-0620d",
+      "components": [
+        "戊",
+        "一",
+        "戊"
+      ],
+      "svgFile": "0620d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戎": {
+      "id": "k-0620e",
+      "components": [
+        "戈",
+        "十",
+        "戈"
+      ],
+      "svgFile": "0620e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戒": {
+      "id": "k-06212",
+      "components": [
+        "戈",
+        "廾",
+        "戈"
+      ],
+      "svgFile": "06212.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戚": {
+      "id": "k-0621a",
+      "components": [
+        "戊",
+        "尗",
+        "戊"
+      ],
+      "svgFile": "0621a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "截": {
+      "id": "k-0622a",
+      "components": [
+        "𢦏",
+        "隹",
+        "𢦏"
+      ],
+      "svgFile": "0622a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "戴": {
+      "id": "k-06234",
+      "components": [
+        "𢦏",
+        "異",
+        "𢦏"
+      ],
+      "svgFile": "06234.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "承": {
+      "id": "k-0627f",
+      "components": [
+        "了",
+        "三",
+        "水"
+      ],
+      "svgFile": "0627f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "曲": {
+      "id": "k-066f2",
+      "components": [
+        "日",
+        "廾",
+        "日"
+      ],
+      "svgFile": "066f2.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "曳": {
+      "id": "k-066f3",
+      "components": [
+        "日",
+        "丨",
+        "丿"
+      ],
+      "svgFile": "066f3.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "更": {
+      "id": "k-066f4",
+      "components": [
+        "一",
+        "日",
+        "乂"
+      ],
+      "svgFile": "066f4.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "朿": {
+      "id": "k-0673f",
+      "components": [
+        "木",
+        "冂",
+        "木"
+      ],
+      "svgFile": "0673f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "束": {
+      "id": "k-0675f",
+      "components": [
+        "木",
+        "口",
+        "木"
+      ],
+      "svgFile": "0675f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "東": {
+      "id": "k-06771",
+      "components": [
+        "木",
+        "日",
+        "木"
+      ],
+      "svgFile": "06771.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "栽": {
+      "id": "k-0683d",
+      "components": [
+        "𢦏",
+        "木",
+        "𢦏"
+      ],
+      "svgFile": "0683d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "氷": {
+      "id": "k-06c37",
+      "components": [
+        "水",
+        "丶",
+        "水"
+      ],
+      "svgFile": "06c37.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "率": {
+      "id": "k-07387",
+      "components": [
+        "玄",
+        "氷",
+        "十"
+      ],
+      "svgFile": "07387.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "瓣": {
+      "id": "k-074e3",
+      "components": [
+        "辛",
+        "瓜",
+        "辛"
+      ],
+      "svgFile": "074e3.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "由": {
+      "id": "k-07531",
+      "components": [
+        "日",
+        "丨",
+        "日"
+      ],
+      "svgFile": "07531.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "画": {
+      "id": "k-0753b",
+      "components": [
+        "一",
+        "由",
+        "凵"
+      ],
+      "svgFile": "0753b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "畐": {
+      "id": "k-07550",
+      "components": [
+        "一",
+        "口",
+        "田"
+      ],
+      "svgFile": "07550.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "疑": {
+      "id": "k-07591",
+      "components": [
+        "匕",
+        "矢",
+        "疋"
+      ],
+      "svgFile": "07591.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "盾": {
+      "id": "k-076fe",
+      "components": [
+        "厂",
+        "十",
+        "目"
+      ],
+      "svgFile": "076fe.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "禹": {
+      "id": "k-079b9",
+      "components": [
+        "丿",
+        "虫",
+        "禸"
+      ],
+      "svgFile": "079b9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "秉": {
+      "id": "k-079c9",
+      "components": [
+        "禾",
+        "⺕",
+        "禾"
+      ],
+      "svgFile": "079c9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "网": {
+      "id": "k-07f51",
+      "components": [
+        "冂",
+        "乂",
+        "乂"
+      ],
+      "svgFile": "07f51.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "臺": {
+      "id": "k-081fa",
+      "components": [
+        "吉",
+        "冖",
+        "至"
+      ],
+      "svgFile": "081fa.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "藝": {
+      "id": "k-085dd",
+      "components": [
+        "艸",
+        "埶",
+        "云"
+      ],
+      "svgFile": "085dd.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "虧": {
+      "id": "k-08667",
+      "components": [
+        "虍",
+        "隹",
+        "二"
+      ],
+      "svgFile": "08667.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衍": {
+      "id": "k-0884d",
+      "components": [
+        "行",
+        "水",
+        "行"
+      ],
+      "svgFile": "0884d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衒": {
+      "id": "k-08852",
+      "components": [
+        "行",
+        "玄",
+        "行"
+      ],
+      "svgFile": "08852.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "街": {
+      "id": "k-08857",
+      "components": [
+        "行",
+        "圭",
+        "行"
+      ],
+      "svgFile": "08857.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衙": {
+      "id": "k-08859",
+      "components": [
+        "行",
+        "吾",
+        "行"
+      ],
+      "svgFile": "08859.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衛": {
+      "id": "k-0885b",
+      "components": [
+        "行",
+        "韋",
+        "行"
+      ],
+      "svgFile": "0885b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衝": {
+      "id": "k-0885d",
+      "components": [
+        "行",
+        "重",
+        "行"
+      ],
+      "svgFile": "0885d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衡": {
+      "id": "k-08861",
+      "components": [
+        "行",
+        "𩵋",
+        "行"
+      ],
+      "svgFile": "08861.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "衢": {
+      "id": "k-08862",
+      "components": [
+        "行",
+        "瞿",
+        "行"
+      ],
+      "svgFile": "08862.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "裁": {
+      "id": "k-088c1",
+      "components": [
+        "𢦏",
+        "衣",
+        "𢦏"
+      ],
+      "svgFile": "088c1.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "褒": {
+      "id": "k-08912",
+      "components": [
+        "衣",
+        "保",
+        "衣"
+      ],
+      "svgFile": "08912.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "讎": {
+      "id": "k-08b8e",
+      "components": [
+        "隹",
+        "言",
+        "隹"
+      ],
+      "svgFile": "08b8e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "貮": {
+      "id": "k-08cae",
+      "components": [
+        "弋",
+        "貝",
+        "弋"
+      ],
+      "svgFile": "08cae.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "貳": {
+      "id": "k-08cb3",
+      "components": [
+        "弍",
+        "貝",
+        "弍"
+      ],
+      "svgFile": "08cb3.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "載": {
+      "id": "k-08f09",
+      "components": [
+        "𢦏",
+        "車",
+        "𢦏"
+      ],
+      "svgFile": "08f09.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "酉": {
+      "id": "k-09149",
+      "components": [
+        "西",
+        "一",
+        "西"
+      ],
+      "svgFile": "09149.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "銜": {
+      "id": "k-0929c",
+      "components": [
+        "行",
+        "金",
+        "行"
+      ],
+      "svgFile": "0929c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "閻": {
+      "id": "k-095bb",
+      "components": [
+        "門",
+        "𠂊",
+        "臼"
+      ],
+      "svgFile": "095bb.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "闃": {
+      "id": "k-095c3",
+      "components": [
+        "門",
+        "目",
+        "犬"
+      ],
+      "svgFile": "095c3.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "闕": {
+      "id": "k-095d5",
+      "components": [
+        "門",
+        "屰",
+        "欠"
+      ],
+      "svgFile": "095d5.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "闘": {
+      "id": "k-095d8",
+      "components": [
+        "門",
+        "豆",
+        "寸"
+      ],
+      "svgFile": "095d8.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "關": {
+      "id": "k-095dc",
+      "components": [
+        "門",
+        "𢆶",
+        "丱"
+      ],
+      "svgFile": "095dc.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "霊": {
+      "id": "k-0970a",
+      "components": [
+        "雨",
+        "一",
+        "亚"
+      ],
+      "svgFile": "0970a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "鬪": {
+      "id": "k-09b2a",
+      "components": [
+        "鬥",
+        "豆",
+        "寸"
+      ],
+      "svgFile": "09b2a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "鵆": {
+      "id": "k-09d46",
+      "components": [
+        "行",
+        "鳥",
+        "行"
+      ],
+      "svgFile": "09d46.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "鷹": {
+      "id": "k-09df9",
+      "components": [
+        "广",
+        "雁",
+        "鳥"
+      ],
+      "svgFile": "09df9.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "黄": {
+      "id": "k-09ec4",
+      "components": [
+        "龷",
+        "由",
+        "八"
+      ],
+      "svgFile": "09ec4.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "齋": {
+      "id": "k-09f4b",
+      "components": [
+        "齊",
+        "小",
+        "齊"
+      ],
+      "svgFile": "09f4b.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "齎": {
+      "id": "k-09f4e",
+      "components": [
+        "齊",
+        "貝",
+        "齊"
+      ],
+      "svgFile": "09f4e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "齏": {
+      "id": "k-09f4f",
+      "components": [
+        "齊",
+        "韭",
+        "齊"
+      ],
+      "svgFile": "09f4f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "龜": {
+      "id": "k-09f9c",
+      "components": [
+        "𠂊",
+        "⺕",
+        "⺕"
+      ],
+      "svgFile": "09f9c.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "���": {
+      "id": "k-0fffd",
+      "components": [
+        "Э",
+        "Ф",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�¥": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "Ф"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�±": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ѹ",
+        "۩"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�û": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "Ф"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ų": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ͼ",
+        "ۿ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ƹ": {
+      "id": "k-0fffd",
+      "components": [
+        "ѹ",
+        "ұ",
+        "Ҹ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ǣ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "Ф"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�Ⱦ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "Ҹ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ɵ": {
+      "id": "k-0fffd",
+      "components": [
+        "Э",
+        "Ф",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ʿ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ѹ",
+        "ۿ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�˴": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�͡": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ۿ",
+        "̵"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�έ": {
+      "id": "k-0fffd",
+      "components": [
+        "Э",
+        "Ф",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�γ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "װ",
+        "�"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�Ө": {
+      "id": "k-0fffd",
+      "components": [
+        "Э",
+        "Ф",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�פ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "Э",
+        "װ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ؽ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "׵",
+        "٩"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ٲ": {
+      "id": "k-0fffd",
+      "components": [
+        "е",
+        "Ω",
+        "ũ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ٶ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ͼ",
+        "�"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ٻ": {
+      "id": "k-0fffd",
+      "components": [
+        "Э",
+        "ұ",
+        "ۿ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ݯ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ѹ",
+        "Ʀ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "�ݲ": {
+      "id": "k-0fffd",
+      "components": [
+        "Ц",
+        "ѹ",
+        "Ҹ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    },
+    "��": {
+      "id": "k-0fffd",
+      "components": [
+        "ҹ",
+        "ۿ",
+        "Ļ"
+      ],
+      "meta": {
+        "source": "kradfile2"
+      }
+    }
+  }
+}

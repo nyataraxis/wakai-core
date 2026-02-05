@@ -1,10 +1,11 @@
 import type { SourceId } from '../src/schema'
 import { normalizeComponents } from '../src/normalizeMap'
-import type { ComponentPosition, RawComponent } from './parse-kanjivg'
+import type { ComponentPosition, KanjivgEntry, RawComponent } from './parse-kanjivg'
 
 export interface ComponentBuildResult {
   componentsByKanji: Record<string, string[]>
   sourceByKanji: Record<string, SourceId>
+  svgFileByKanji: Record<string, string>
   warnings: string[]
 }
 
@@ -18,17 +19,24 @@ const buildComponentList = (components: RawComponent[]): string[] =>
   components.map((entry) => entry.component)
 
 export const buildComponents = (
-  kanjivg: Record<string, RawComponent[]>,
+  kanjivg: Record<string, KanjivgEntry>,
   krad: Record<string, string[]>
 ): ComponentBuildResult => {
   const componentsByKanji: Record<string, string[]> = {}
   const sourceByKanji: Record<string, SourceId> = {}
+  const svgFileByKanji: Record<string, string> = {}
   const warnings: string[] = []
   const kanjiSet = new Set([...Object.keys(kanjivg), ...Object.keys(krad)])
 
   for (const kanji of kanjiSet) {
-    const fromKanjivg = kanjivg[kanji] ?? []
+    const kanjivgEntry = kanjivg[kanji]
+    const fromKanjivg = kanjivgEntry?.components ?? []
     const fromKrad = krad[kanji] ?? []
+
+    if (kanjivgEntry?.svgFile) {
+      svgFileByKanji[kanji] = kanjivgEntry.svgFile
+    }
+
     if (fromKanjivg.length >= MIN_COMPONENTS) {
       const componentWarnings: string[] = []
       const normalized = normalizeComponents(
@@ -58,5 +66,5 @@ export const buildComponents = (
     warnings.push(`missing-components:${kanji}`)
   }
 
-  return { componentsByKanji, sourceByKanji, warnings }
+  return { componentsByKanji, sourceByKanji, svgFileByKanji, warnings }
 }

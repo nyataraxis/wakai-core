@@ -9,6 +9,11 @@ export interface RawComponent {
   position?: ComponentPosition
 }
 
+export interface KanjivgEntry {
+  components: RawComponent[]
+  svgFile: string
+}
+
 const KVG_ELEMENT_ATTR = '@_kvg:element'
 const KVG_POSITION_ATTR = '@_kvg:position'
 const SVG_EXT = '.svg'
@@ -130,9 +135,9 @@ const kanjiFromFilename = (filename: string): string | null => {
 
 export const parseKanjivgDir = async (
   directory: string
-): Promise<Record<string, RawComponent[]>> => {
+): Promise<Record<string, KanjivgEntry>> => {
   const files = await readdir(directory)
-  const result: Record<string, RawComponent[]> = {}
+  const result: Record<string, KanjivgEntry> = {}
   for (const file of files) {
     if (!file.endsWith(SVG_EXT)) {
       continue
@@ -151,7 +156,10 @@ export const parseKanjivgDir = async (
     }
     const direct = collectDirectComponents(group)
     const components = direct.length > 0 ? direct : collectFallbackComponents(group)
-    result[kanji] = applyOrderPositions(components)
+    result[kanji] = {
+      components: applyOrderPositions(components),
+      svgFile: file
+    }
   }
   return result
 }

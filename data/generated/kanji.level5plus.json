@@ -1,0 +1,275 @@
+{
+  "contentVersion": "1.0.0",
+  "level": 5,
+  "kanji": {
+    "亙": {
+      "id": "k-04e99",
+      "components": [
+        "互",
+        "彑",
+        "丶",
+        "丶",
+        "互"
+      ],
+      "svgFile": "04e99.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "單": {
+      "id": "k-055ae",
+      "components": [
+        "口",
+        "口",
+        "甲",
+        "一",
+        "甲"
+      ],
+      "svgFile": "055ae.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "噐": {
+      "id": "k-05650",
+      "components": [
+        "口",
+        "口",
+        "工",
+        "口",
+        "口"
+      ],
+      "svgFile": "05650.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "器": {
+      "id": "k-05668",
+      "components": [
+        "口",
+        "口",
+        "大",
+        "口",
+        "口"
+      ],
+      "svgFile": "05668.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "嚢": {
+      "id": "k-056a2",
+      "components": [
+        "衣",
+        "口",
+        "丨",
+        "冖",
+        "八",
+        "衣"
+      ],
+      "svgFile": "056a2.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "囂": {
+      "id": "k-056c2",
+      "components": [
+        "口",
+        "口",
+        "頁",
+        "口",
+        "口"
+      ],
+      "svgFile": "056c2.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "州": {
+      "id": "k-05dde",
+      "components": [
+        "丶",
+        "川",
+        "丶",
+        "川",
+        "丶",
+        "川"
+      ],
+      "svgFile": "05dde.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "晉": {
+      "id": "k-06649",
+      "components": [
+        "二",
+        "厶",
+        "厶",
+        "二",
+        "日"
+      ],
+      "svgFile": "06649.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "爾": {
+      "id": "k-0723e",
+      "components": [
+        "一",
+        "八",
+        "冂",
+        "爻",
+        "爻"
+      ],
+      "svgFile": "0723e.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "畿": {
+      "id": "k-0757f",
+      "components": [
+        "幺",
+        "幺",
+        "戈",
+        "田",
+        "戈"
+      ],
+      "svgFile": "0757f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "疊": {
+      "id": "k-0758a",
+      "components": [
+        "田",
+        "田",
+        "田",
+        "冖",
+        "且"
+      ],
+      "svgFile": "0758a.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "羸": {
+      "id": "k-07fb8",
+      "components": [
+        "亡",
+        "口",
+        "羊",
+        "月",
+        "凡"
+      ],
+      "svgFile": "07fb8.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "聽": {
+      "id": "k-0807d",
+      "components": [
+        "耳",
+        "王",
+        "十",
+        "罒",
+        "心"
+      ],
+      "svgFile": "0807d.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "臧": {
+      "id": "k-081e7",
+      "components": [
+        "爿",
+        "戈",
+        "爿",
+        "臣",
+        "戈"
+      ],
+      "svgFile": "081e7.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "蠧": {
+      "id": "k-08827",
+      "components": [
+        "士",
+        "冖",
+        "石",
+        "虫",
+        "虫"
+      ],
+      "svgFile": "08827.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "蠶": {
+      "id": "k-08836",
+      "components": [
+        "旡",
+        "旡",
+        "日",
+        "虫",
+        "虫"
+      ],
+      "svgFile": "08836.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "贏": {
+      "id": "k-08d0f",
+      "components": [
+        "亡",
+        "口",
+        "貝",
+        "月",
+        "凡"
+      ],
+      "svgFile": "08d0f.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "釁": {
+      "id": "k-091c1",
+      "components": [
+        "𦥑",
+        "𦥑",
+        "冖",
+        "酉",
+        "分"
+      ],
+      "svgFile": "091c1.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    },
+    "鬱": {
+      "id": "k-09b31",
+      "components": [
+        "缶",
+        "木",
+        "木",
+        "冖",
+        "鬯",
+        "彡"
+      ],
+      "svgFile": "09b31.svg",
+      "meta": {
+        "source": "kanjivg"
+      }
+    }
+  }
+}
