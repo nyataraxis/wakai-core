@@ -1,39 +1,23 @@
 import { createSignature } from '@wakai-core/core'
 import type { ComponentId, KanjiId, NormalizationTable } from '@wakai-core/core'
-import type { ContentBundle, FusionIndexRecord, KanjiEntry } from './schema'
+import type { Content, FusionIndex, KanjiEntry, NormalizeMap } from './schema'
 
-const DEFAULT_CONTENT_VERSION = '0.1.0'
+const DEFAULT_CONTENT_VERSION = '1.0.0'
 
-const DEFAULT_NORMALIZATION_MAP: NormalizationTable = {}
+const DEFAULT_NORMALIZE_MAP: NormalizeMap = {}
 
-const createKanjiEntry = (
-  kanji: KanjiId,
-  components: ComponentId[],
-  readings: string[],
-  meanings: string[],
-  jlpt: number,
-  freq: number
-): KanjiEntry => ({
-  kanji,
-  components,
-  readings,
-  meanings,
-  jlpt,
-  freq
-})
-
-const DEFAULT_KANJI: KanjiEntry[] = [
-  createKanjiEntry('人', ['人'], ['じん', 'ひと'], ['person'], 5, 5),
-  createKanjiEntry('木', ['木'], ['もく', 'き'], ['tree'], 5, 5),
-  createKanjiEntry('水', ['水'], ['すい', 'みず'], ['water'], 5, 5),
-  createKanjiEntry('火', ['火'], ['か', 'ひ'], ['fire'], 5, 5),
-  createKanjiEntry('日', ['日'], ['にち', 'ひ'], ['sun'], 5, 5),
-  createKanjiEntry('月', ['月'], ['げつ', 'つき'], ['moon'], 5, 5),
-  createKanjiEntry('休', ['人', '木'], ['きゅう', 'やす'], ['rest'], 4, 4),
-  createKanjiEntry('林', ['木', '木'], ['りん', 'はやし'], ['woods'], 4, 4),
-  createKanjiEntry('明', ['日', '月'], ['めい', 'あか'], ['bright'], 3, 3),
-  createKanjiEntry('炎', ['火', '火'], ['えん', 'ほのお'], ['blaze'], 3, 3)
-]
+const DEFAULT_KANJI: Record<KanjiId, KanjiEntry> = {
+  人: { components: ['人'] },
+  木: { components: ['木'] },
+  水: { components: ['水'] },
+  火: { components: ['火'] },
+  日: { components: ['日'] },
+  月: { components: ['月'] },
+  休: { components: ['人', '木'] },
+  林: { components: ['木', '木'] },
+  明: { components: ['日', '月'] },
+  炎: { components: ['火', '火'] }
+}
 
 const DEFAULT_FUSIONS: Array<{ components: [ComponentId, ComponentId]; output: KanjiId }> = [
   { components: ['人', '木'], output: '休' },
@@ -45,16 +29,27 @@ const DEFAULT_FUSIONS: Array<{ components: [ComponentId, ComponentId]; output: K
 const buildFusionIndex = (
   fusions: Array<{ components: [ComponentId, ComponentId]; output: KanjiId }>,
   normalizationMap: NormalizationTable
-): FusionIndexRecord =>
-  fusions.reduce<FusionIndexRecord>((acc, fusion) => {
+): FusionIndex =>
+  fusions.reduce<FusionIndex>((acc, fusion) => {
     const signature = createSignature(fusion.components, normalizationMap)
     acc[signature] = fusion.output
     return acc
   }, {})
 
-export const getDefaultContent = (): ContentBundle => ({
+export const getDefaultContent = (): Content => ({
   contentVersion: DEFAULT_CONTENT_VERSION,
   kanji: DEFAULT_KANJI,
-  fusionIndex: buildFusionIndex(DEFAULT_FUSIONS, DEFAULT_NORMALIZATION_MAP),
-  normalizationMap: DEFAULT_NORMALIZATION_MAP
+  fusionIndex: buildFusionIndex(DEFAULT_FUSIONS, DEFAULT_NORMALIZE_MAP),
+  normalizeMap: DEFAULT_NORMALIZE_MAP,
+  startSet: ['人', '木', '水', '火', '日', '月'],
+  debug: {
+    sourceByKanji: Object.keys(DEFAULT_KANJI).reduce<Record<KanjiId, 'kanjivg'>>(
+      (acc, key) => {
+        acc[key] = 'kanjivg'
+        return acc
+      },
+      {}
+    ),
+    warnings: []
+  }
 })

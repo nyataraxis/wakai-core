@@ -6,3 +6,4 @@ pnpm-lock.yaml
 .DS_Store
 apps/desktop/out
 *.tsbuildinfo
+data/raw

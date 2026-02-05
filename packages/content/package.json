@@ -7,8 +7,14 @@
     "@wakai-core/core": "workspace:*",
     "zod": "latest"
   },
+  "devDependencies": {
+    "fast-xml-parser": "latest",
+    "tsx": "latest",
+    "vitest": "latest"
+  },
   "scripts": {
     "build": "tsc -b",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run"
   }
 }

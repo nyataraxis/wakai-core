@@ -3,8 +3,10 @@ export { loadEmbeddedContent, loadRemoteContent } from './loader'
 export { isCompatible } from './versioning'
 export { ContentSchema, KanjiEntrySchema } from './schema'
 export type {
-  ContentBundle,
+  Content,
   ContentVersion,
-  FusionIndexRecord,
-  KanjiEntry
+  FusionIndex,
+  KanjiEntry,
+  NormalizeMap,
+  SourceId
 } from './schema'

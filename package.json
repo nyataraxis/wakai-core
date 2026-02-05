@@ -8,7 +8,10 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "release:tag": "node scripts/release-tag.mjs"
+    "release:tag": "node scripts/release-tag.mjs",
+    "content:build": "pnpm --filter @wakai-core/content exec tsx scripts/build-content.ts",
+    "content:test": "pnpm --filter @wakai-core/content test",
+    "content:all": "pnpm content:build && pnpm content:test"
   },
   "devDependencies": {
     "@types/node": "22.10.7",

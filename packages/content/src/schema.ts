@@ -1,35 +1,41 @@
 import { z } from 'zod'
-import type { ComponentId, KanjiId, NormalizationTable } from '@wakai-core/core'
 
 export type ContentVersion = string
+export type KanjiId = string
+export type ComponentId = string
+export type FusionIndex = Record<string, KanjiId>
+export type NormalizeMap = Record<ComponentId, ComponentId>
+export type SourceId = 'kanjivg' | 'kradfile2'
 
-const componentIdSchema: z.ZodType<ComponentId> = z.string()
-const kanjiIdSchema: z.ZodType<KanjiId> = z.string()
-const contentVersionSchema: z.ZodType<ContentVersion> = z.string()
+const componentIdSchema = z.string()
+const kanjiIdSchema = z.string()
+const contentVersionSchema = z.string()
+const sourceIdSchema = z.enum(['kanjivg', 'kradfile2'])
 
 export const KanjiEntrySchema = z.object({
-  kanji: kanjiIdSchema,
   components: z.array(componentIdSchema),
-  readings: z.array(z.string()),
-  meanings: z.array(z.string()),
-  jlpt: z.number().int(),
-  freq: z.number().int()
+  meta: z
+    .object({
+      source: sourceIdSchema,
+      warnings: z.array(z.string()).optional()
+    })
+    .optional()
 })
 
 export type KanjiEntry = z.infer<typeof KanjiEntrySchema>
 
-const normalizationMapSchema: z.ZodType<NormalizationTable> = z.record(
-  componentIdSchema,
-  componentIdSchema
-)
+const normalizeMapSchema: z.ZodType<NormalizeMap> = z.record(componentIdSchema, componentIdSchema)
 
 export const ContentSchema = z.object({
   contentVersion: contentVersionSchema,
-  kanji: z.array(KanjiEntrySchema),
+  kanji: z.record(kanjiIdSchema, KanjiEntrySchema),
   fusionIndex: z.record(z.string(), kanjiIdSchema),
-  normalizationMap: normalizationMapSchema
+  normalizeMap: normalizeMapSchema,
+  startSet: z.array(componentIdSchema),
+  debug: z.object({
+    sourceByKanji: z.record(kanjiIdSchema, sourceIdSchema),
+    warnings: z.array(z.string())
+  })
 })
 
-export type ContentBundle = z.infer<typeof ContentSchema>
-
-export type FusionIndexRecord = Record<string, KanjiId>
+export type Content = z.infer<typeof ContentSchema>

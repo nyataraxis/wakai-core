@@ -1,8 +1,8 @@
-import { ContentSchema, type ContentBundle } from './schema'
+import { ContentSchema, type Content } from './schema'
 
 export interface ContentCache {
-  get: (key: string) => Promise<ContentBundle | null>
-  set: (key: string, value: ContentBundle) => Promise<void>
+  get: (key: string) => Promise<Content | null>
+  set: (key: string, value: Content) => Promise<void>
 }
 
 export interface RemoteContentSource {
@@ -18,12 +18,12 @@ const parseJsonIfString = (value: unknown): unknown => {
   return JSON.parse(value)
 }
 
-export const loadEmbeddedContent = (value: unknown): ContentBundle => {
+export const loadEmbeddedContent = (value: unknown): Content => {
   const parsed = parseJsonIfString(value)
   return ContentSchema.parse(parsed)
 }
 
-export const loadRemoteContent = async (source: RemoteContentSource): Promise<ContentBundle> => {
+export const loadRemoteContent = async (source: RemoteContentSource): Promise<Content> => {
   const cached = source.cache ? await source.cache.get(source.cacheKey) : null
   if (cached) {
     return cached
