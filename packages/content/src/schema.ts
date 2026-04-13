@@ -10,6 +10,8 @@ const contentVersionSchema: z.ZodType<ContentVersion> = z.string()
 export const KanjiEntrySchema = z.object({
   kanji: kanjiIdSchema,
   components: z.array(componentIdSchema),
+  mergeComponents: z.array(componentIdSchema).optional(),
+  arity: z.number().int().optional(),
   readings: z.array(z.string()),
   meanings: z.array(z.string()),
   jlpt: z.number().int(),
@@ -22,6 +24,14 @@ const normalizationMapSchema: z.ZodType<NormalizationTable> = z.record(
   componentIdSchema,
   componentIdSchema
 )
+
+export const MergeMapSchema = z.object({
+  contentVersion: contentVersionSchema,
+  arity: z.union([z.number().int(), z.string()]),
+  mergeMap: z.record(z.string(), kanjiIdSchema)
+})
+
+export type MergeMapBundle = z.infer<typeof MergeMapSchema>
 
 export const ContentSchema = z.object({
   contentVersion: contentVersionSchema,

@@ -36,10 +36,12 @@ export interface FusionFailure {
 
 export type FusionResult = FusionSuccess | FusionFailure
 
+const MIN_FUSION_COMPONENTS = 2
+
 /** Inputs for a fusion attempt. */
 export interface FusionOptions {
   inventory: ReadonlySet<ElementId>
-  components: [ComponentId, ComponentId]
+  components: ComponentId[]
   normalizationMap: NormalizationTable
   fusionIndex: FusionIndex
   xpOnSuccess?: number
@@ -70,6 +72,15 @@ export const fuse = ({
   xpOnSuccess,
   xpOnFailure
 }: FusionOptions): FusionResult => {
+  if (components.length < MIN_FUSION_COMPONENTS) {
+    return {
+      success: false,
+      signature: '',
+      unlockDelta: [],
+      xpDelta: xpOnFailure ?? DEFAULT_XP_ON_FAILURE
+    }
+  }
+
   const signature = createSignature(components, normalizationMap)
   const output = fusionIndex.get(signature)
   if (!output) {

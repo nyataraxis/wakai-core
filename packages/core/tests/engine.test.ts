@@ -33,4 +33,70 @@ describe('kanji alchemy core', () => {
       expect(result.unlockDelta).toEqual(['休'])
     }
   })
+
+  it('supports 3-element fusions', () => {
+    const sig = createSignature(['宀', '女', '子'], {})
+    const fusionIndex: FusionIndex = new Map([[sig, '安']])
+    const inventory = new Set(['宀', '女', '子'])
+    const result = fuse({
+      inventory,
+      components: ['宀', '女', '子'],
+      normalizationMap: {},
+      fusionIndex
+    })
+
+    expect(result.success).toBe(true)
+    if (result.success) {
+      expect(result.output).toBe('安')
+    }
+  })
+
+  it('supports 5-element fusions', () => {
+    const components = ['宀', '⺦', '⺕', '冖', '又']
+    const sig = createSignature(components, {})
+    const fusionIndex: FusionIndex = new Map([[sig, '寝']])
+    const inventory = new Set(components)
+    const result = fuse({
+      inventory,
+      components,
+      normalizationMap: {},
+      fusionIndex
+    })
+
+    expect(result.success).toBe(true)
+    if (result.success) {
+      expect(result.output).toBe('寝')
+    }
+  })
+
+  it('normalizes kana in multi-element fusions', () => {
+    const kanaMap: NormalizationTable = { 'タ': '夕' }
+    const sig = createSignature(['タ', 'タ'], kanaMap)
+    expect(sig).toBe('夕|夕')
+
+    const fusionIndex: FusionIndex = new Map([[sig, '多']])
+    const result = fuse({
+      inventory: new Set(['タ']),
+      components: ['タ', 'タ'],
+      normalizationMap: kanaMap,
+      fusionIndex
+    })
+
+    expect(result.success).toBe(true)
+    if (result.success) {
+      expect(result.output).toBe('多')
+    }
+  })
+
+  it('rejects fusions with fewer than 2 components', () => {
+    const fusionIndex: FusionIndex = new Map()
+    const result = fuse({
+      inventory: new Set(['人']),
+      components: ['人'],
+      normalizationMap: {},
+      fusionIndex
+    })
+
+    expect(result.success).toBe(false)
+  })
 })

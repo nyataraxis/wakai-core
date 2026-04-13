@@ -13,6 +13,11 @@
     },
     "lint": {
       "dependsOn": ["^lint"]
+    },
+    "generate": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "outputs": ["../../data/generated/**"]
     }
   }
 }

@@ -8,6 +8,7 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
+    "generate": "turbo run generate --filter=@wakai-core/pipeline",
     "release:tag": "node scripts/release-tag.mjs"
   },
   "devDependencies": {
