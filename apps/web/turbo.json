@@ -1,0 +1,16 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/data/generated/alchemy.json",
+        "$TURBO_ROOT$/data/generated/audit.json",
+        "$TURBO_ROOT$/data/NOTICE.md",
+        "$TURBO_ROOT$/data/KANJIVG-LICENSE.txt",
+        "$TURBO_ROOT$/scripts/prepare-web.mjs"
+      ],
+      "env": ["VITE_BASE_PATH"]
+    }
+  }
+}

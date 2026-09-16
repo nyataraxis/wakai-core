@@ -1,17 +1,65 @@
-# Wakai Core
+# Kanji Alchemy / Wakai Core
 
-Web-first, mobile-first monorepo with a shared TypeScript core engine.
+A web laboratory for combining written kanji components. The audited dataset has
+6,423 source-covered kanji, 6,601 elements, and 10,232 recipes with two to four
+ingredients. All included forms are reachable from 790 starting pieces.
+
+The starting set is a proven minimum **for the accepted recipe graph**, not a claim
+about universal radicals. Characters without a complete supported decomposition
+are supplied as starting pieces and identified in the audit. The corpus does not
+claim to include every Unicode kanji or to be an expert-validated dictionary.
+
+Read the [design and development plan](docs/kanji-alchemy.md) for the repository
+audit, model decisions, acceptance checks, and next steps. The old generated maps
+remain for comparison; the web app uses only `data/generated/alchemy.json`.
 
 ## Requirements
 
-- Node.js 20+
-- pnpm 9+
+- Node.js 22+
+- pnpm 9.15.0 (the version in `packageManager`)
 
 ## Setup
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
+pnpm dev
 ```
+
+The generated dataset is committed, so normal development needs no dictionary download.
+`pnpm dev` builds the shared dependencies and starts the web app. Click or drag
+pieces into up to four slots; pieces are reusable. Matching recipes unlock all
+valid results. Hints, searchable collections, source references, and browser-local
+progress are included.
+
+```bash
+pnpm verify       # web build, package tests/lint, and full gameplay reachability
+pnpm data:fetch   # fetch the exact KanjiVG revision (network required)
+pnpm generate     # rebuild data from the pinned source and digest
+pnpm data:check   # compare a fresh generation with committed artifacts
+```
+
+## GitHub Pages
+
+The build uses relative assets and can live at `/wakai-core/` or another subdirectory.
+The **Deploy Kanji Alchemy to Pages** workflow is manually triggered. After pushing
+these changes, set the repository's Settings → Pages source to **GitHub Actions**,
+then run that workflow. It verifies and publishes `apps/web/dist`. Nothing is
+published by local development commands. Deployment replaces that repository's
+Pages artifact; to include this in a larger existing site, copy the build into the
+desired subdirectory of that site's own deployment instead.
+
+To preview the production build at a project path in PowerShell:
+
+```powershell
+pnpm verify
+$env:VITE_BASE_PATH = '/wakai-core/'
+pnpm --filter @wakai-core/web preview --host 127.0.0.1
+```
+
+The source data is adapted from KanjiVG by Ulrich Apel and contributors under
+CC BY-SA 3.0; see [attribution](data/NOTICE.md) and [license](data/KANJIVG-LICENSE.txt).
+The service worker caches the app and recipe dataset after a successful online
+visit. Progress is local to the browser; it is not an account or cloud backup.
 
 ## Root scripts
 

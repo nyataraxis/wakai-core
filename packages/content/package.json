@@ -1,14 +1,17 @@
 {
   "name": "@wakai-core/content",
   "version": "0.1.0",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
     "@wakai-core/core": "workspace:*",
-    "zod": "latest"
+    "zod": "3.24.1"
   },
   "scripts": {
     "build": "tsc -b",
+    "test": "vitest run",
     "lint": "eslint . --max-warnings=0"
-  }
+  },
+  "devDependencies": { "vitest": "2.1.8" }
 }
