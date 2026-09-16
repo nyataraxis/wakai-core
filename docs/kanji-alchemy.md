@@ -99,6 +99,14 @@ a supplied starter in this MVP unless another complete source-backed recipe exis
 
 ### Minimum starting set
 
+The app offers freely switchable two-, three-, and four-piece modes with no
+progress requirements to switch between them. Each mode uses only recipes with
+exactly that many inputs and only the elements appearing in those recipes. Its starting set is recomputed
+independently, so a form made in another mode can be a starter here when this mode
+has no recipe producing it. Witnesses, counts, hints, and collection progress all
+use the selected mode's graph. Progress is saved separately for each mode; the
+previous mixed-mode save remains stored but is not loaded into these modes.
+
 Compute the closure of all elements without producers. Add deterministic cycle
 breakers only if necessary, then remove every unnecessary added seed. For general
 cyclic graphs this guarantees an **inclusion-minimal** set, not a globally smallest
@@ -112,6 +120,38 @@ universal claim about the smallest possible kanji alphabet.
 Every nonstarter includes a recipe witness and a strictly increasing dependency
 depth. The verification script replays these through the real game engine and
 checks every accepted recipe, rather than trusting summary counts.
+
+### Progressive levels
+
+Each merge mode now begins with 48 starters. Starters are ranked by how many
+recipes use them, counting each starter once per recipe even when an ingredient
+repeats. Codepoint ordering breaks ties deterministically. Each subsequent level
+adds up to 20 starters, keeping every previous starter and discovery available.
+The mode switcher remains freely accessible; levels advance independently within
+each mode.
+
+Unlock milestones use cumulative unique discoveries, excluding supplied starters:
+20 discoveries unlock level 2, 40 unlock level 3, and so on. Each milestone is
+capped by the current level's reachable discoveries so progression cannot require
+an unavailable result. The final level's target is the complete discoverable
+collection. Players choose when to advance after meeting a milestone; they do not
+need to exhaust a level's recipes. Discovered intermediates remain reusable in
+later recipes and levels.
+
+The initial pools support 485, 493, and 273 discoveries in two-, three-, and
+four-piece modes respectively, including 473, 475, and 268 kanji. Later levels
+expand the available recipe graph until the complete mode is reachable. Most
+results are terminal kanji; the existing four-piece graph in particular has fewer
+reusable intermediates than the two-piece graph.
+
+The collection offers per-level groups and a building-block filter for pieces
+that participate in further recipes. Guided level progress uses a separate save
+for each mode. Earlier sandbox saves remain stored but are not loaded into guided
+progress, so a prior large inventory does not bypass the new starting set.
+
+Real-data verification checks each level's cumulative closure, starter batches,
+achievable discovery targets, advancement, retained discoveries, and complete
+final reachability in addition to the existing full recipe replay.
 
 ## Current generated result
 
@@ -129,8 +169,8 @@ checks every accepted recipe, rather than trusting summary counts.
 
 The large starting set is a visible limitation of conservative source coverage.
 "Atomic" means no accepted producing recipe, not linguistically indivisible.
-The app prioritizes familiar, useful starting forms and offers playable hints
-instead of expecting a new player to browse 790 equally useful radicals.
+The app introduces these starters gradually in levels and offers playable hints
+instead of expecting a new player to browse the complete starting set.
 
 ## Reproducibility, packaging, and verification
 
@@ -169,8 +209,8 @@ coverage, and a regression fixture for every exception. Evaluate a Japanese-form
 IDS source as corroborating evidence, with its own version and license, rather
 than merging dictionaries by global character substitutions.
 
-A beginner collection can then start from a small thematic subset with its own
-closure certificate, while the full laboratory retains the complete source corpus.
-Add licensed readings/meanings and a declared Jōyō target list before calling this
-a learning dictionary. Spatial recipe visualization and synthetic intermediate
-components are later product decisions, not hidden repairs to missing data.
+The current frequency-ranked levels can later be refined into thematic groups
+with their own closure certificates. Add licensed readings/meanings and a declared
+Jōyō target list before calling this a learning dictionary. Spatial recipe
+visualization and synthetic intermediate components are later product decisions,
+not hidden repairs to missing data.
