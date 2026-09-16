@@ -194,6 +194,48 @@
   gap: 26px;
   align-items: start;
 }
+.modeSection {
+  margin-bottom: 28px;
+}
+.modeSwitcher {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #d6dacc;
+  border-radius: 12px;
+  background: #eceee3;
+}
+.modeSwitcher button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 6px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #63715f;
+}
+.modeSwitcher button[aria-pressed='true'] {
+  background: #2d5142;
+  color: #fbfaf5;
+}
+.modeSwitcher button:hover {
+  border-color: #879782;
+}
+.modeSwitcher strong {
+  font-size: clamp(12px, 2vw, 15px);
+  font-weight: 600;
+}
+.modeSwitcher span {
+  font-size: 10px;
+}
+.modeSection > p {
+  margin: 10px 0 0;
+  color: #6c786d;
+  font-size: 12px;
+}
 .library {
   min-width: 0;
   background: #fbfaf5;

@@ -99,6 +99,14 @@ a supplied starter in this MVP unless another complete source-backed recipe exis
 
 ### Minimum starting set
 
+The app offers freely switchable two-, three-, and four-piece modes with no
+progress requirements. Each mode uses only recipes with exactly that many inputs
+and only the elements appearing in those recipes. Its starting set is recomputed
+independently, so a form made in another mode can be a starter here when this mode
+has no recipe producing it. Witnesses, counts, hints, and collection progress all
+use the selected mode's graph. Progress is saved separately for each mode; the
+previous mixed-mode save remains stored but is not loaded into these modes.
+
 Compute the closure of all elements without producers. Add deterministic cycle
 breakers only if necessary, then remove every unnecessary added seed. For general
 cyclic graphs this guarantees an **inclusion-minimal** set, not a globally smallest

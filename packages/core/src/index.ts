@@ -22,3 +22,4 @@ export {
   serializeAlchemyProgress
 } from './alchemy.js';
 export type { AlchemyBundle, AlchemyElement, AlchemyRecipe, AlchemyResult } from './alchemy.js';
+export { createAlchemyMode, type MergeArity } from './modes.js';

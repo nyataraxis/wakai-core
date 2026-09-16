@@ -1,15 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { loadAlchemyContent } from '@wakai-core/content';
 import {
+  createAlchemyMode,
   mergeAlchemy,
   getCraftableRecipes,
   readAlchemyProgress,
   serializeAlchemyProgress,
-  type AlchemyBundle
+  type AlchemyBundle,
+  type MergeArity
 } from '@wakai-core/core';
 import styles from './App.module.css';
 
 const STORAGE_KEY = 'wakai.kanji-alchemy.progress';
+const MERGE_MODES = [2, 3, 4] as const;
 const PAGE_SIZE = 80;
 const labels: Record<string, string> = {
   一: 'one',
@@ -109,10 +112,10 @@ const labels: Record<string, string> = {
 type Feedback = { message: string; outputs: string[]; newDiscoveries: string[] };
 type LibraryTab = 'seeds' | 'discoveries' | 'all';
 
-function initialProgress(content: AlchemyBundle) {
+function initialProgress(content: AlchemyBundle, arity: MergeArity) {
   try {
     return {
-      unlocked: readAlchemyProgress(localStorage.getItem(STORAGE_KEY), content),
+      unlocked: readAlchemyProgress(localStorage.getItem(`${STORAGE_KEY}.${arity}`), content),
       warning: ''
     };
   } catch {
@@ -148,7 +151,7 @@ export function App() {
     void load();
     return () => controller.abort();
   }, [attempt]);
-  if (content) return <Alchemy content={content} />;
+  if (content) return <AlchemyModes content={content} />;
   return (
     <main className={styles.loadingPage}>
       <div className={styles.loadingSeal} aria-hidden="true">
@@ -170,10 +173,62 @@ export function App() {
   );
 }
 
-function Alchemy({ content }: { content: AlchemyBundle }) {
-  const [initial] = useState(() => initialProgress(content));
-  const [unlocked, setUnlocked] = useState<string[]>(initial.unlocked);
-  const [storageWarning, setStorageWarning] = useState(initial.warning);
+function AlchemyModes({ content }: { content: AlchemyBundle }) {
+  const modes = useMemo(
+    () => MERGE_MODES.map((arity) => ({ arity, content: createAlchemyMode(content, arity) })),
+    [content]
+  );
+  const [arity, setArity] = useState<MergeArity>(2);
+  const previousArity = useRef(arity);
+  const activeModeButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (previousArity.current !== arity) {
+      activeModeButton.current?.focus({ preventScroll: true });
+      previousArity.current = arity;
+    }
+  }, [arity]);
+  const [collections, setCollections] = useState(() =>
+    modes.map((mode) => initialProgress(mode.content, mode.arity))
+  );
+  const index = MERGE_MODES.indexOf(arity);
+  return (
+    <Alchemy
+      key={arity}
+      content={modes[index].content}
+      arity={arity}
+      onModeChange={setArity}
+      activeModeButton={activeModeButton}
+      unlocked={collections[index].unlocked}
+      initialWarning={collections[index].warning}
+      onCollectionChange={(unlocked) =>
+        setCollections((current) =>
+          current.map((collection, position) =>
+            position === index ? { ...collection, unlocked } : collection
+          )
+        )
+      }
+    />
+  );
+}
+
+function Alchemy({
+  content,
+  arity,
+  onModeChange,
+  activeModeButton,
+  unlocked,
+  initialWarning,
+  onCollectionChange
+}: {
+  content: AlchemyBundle;
+  arity: MergeArity;
+  onModeChange: (arity: MergeArity) => void;
+  activeModeButton: RefObject<HTMLButtonElement>;
+  unlocked: string[];
+  initialWarning: string;
+  onCollectionChange: (unlocked: string[]) => void;
+}) {
+  const [storageWarning, setStorageWarning] = useState(initialWarning);
   const [slots, setSlots] = useState<string[]>([]);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [query, setQuery] = useState('');
@@ -203,13 +258,13 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, serializeAlchemyProgress(unlocked, content));
+      localStorage.setItem(`${STORAGE_KEY}.${arity}`, serializeAlchemyProgress(unlocked, content));
     } catch {
       setStorageWarning(
         'Your browser cannot save progress. Keep this tab open to preserve this session.'
       );
     }
-  }, [unlocked, content]);
+  }, [unlocked, content, arity]);
 
   const sortedElements = useMemo(() => {
     const frequency = new Map<string, number>();
@@ -250,13 +305,14 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
 
   function addElement(id: string) {
     if (!inventory.has(id)) return;
-    setSlots((current) => (current.length < 4 ? [...current, id] : current));
+    setSlots((current) => (current.length < arity ? [...current, id] : current));
     setFeedback(null);
   }
   function merge() {
+    if (slots.length !== arity) return;
     const result = mergeAlchemy({ components: slots, inventory, content });
     if (result.success) {
-      setUnlocked((current) => [...new Set([...current, ...result.newDiscoveries])]);
+      onCollectionChange([...new Set([...unlocked, ...result.newDiscoveries])]);
       setFeedback({
         message: result.newDiscoveries.length
           ? `${result.newDiscoveries.length === 1 ? 'A new discovery' : `${result.newDiscoveries.length} new discoveries`}. Beautifully put together.`
@@ -270,7 +326,7 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
       setFeedback({
         message:
           result.reason === 'arity'
-            ? 'Choose two, three, or four elements to combine.'
+            ? `Choose exactly ${arity} elements to combine.`
             : result.reason === 'locked'
               ? 'One of these elements is not in your collection yet.'
               : 'No recorded combination yet. Try different elements, or ask for a hint.',
@@ -279,7 +335,7 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
       });
   }
   function reset() {
-    setUnlocked([...content.seeds]);
+    onCollectionChange([...content.seeds]);
     setSlots([]);
     setFeedback(null);
     setSelected(null);
@@ -329,6 +385,28 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
               {content.seeds.length.toLocaleString()} starting elements
             </span>
           </div>
+        </section>
+        <section className={styles.modeSection} aria-label="Merge mode">
+          <div className={styles.modeSwitcher} role="group" aria-label="Number of parts per merge">
+            {MERGE_MODES.map((value) => (
+              <button
+                key={value}
+                ref={arity === value ? activeModeButton : undefined}
+                aria-pressed={arity === value}
+                onClick={() => onModeChange(value)}
+              >
+                <strong>{value}-part merges</strong>
+                <span>
+                  {value === 2
+                    ? 'Classic alchemy'
+                    : value === 3
+                      ? 'Three-part experiments'
+                      : 'Four to explore'}
+                </span>
+              </button>
+            ))}
+          </div>
+          <p>Every mode is open. Each has its own starting pieces and discoveries.</p>
         </section>
         {storageWarning && (
           <p className={styles.warning} role="status">
@@ -452,7 +530,7 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                           ? `Add ${element.glyph}${displayLabel ? `, ${displayLabel}` : ''} to workbench`
                           : `Inspect locked form ${element.glyph}`
                       }
-                      disabled={available && slots.length === 4}
+                      disabled={available && slots.length === arity}
                     >
                       <span className={styles.kanji}>{element.glyph}</span>
                       <span className={styles.elementLabel}>
@@ -517,14 +595,18 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                 </span>
               </div>
               <p className={styles.workbenchDescription}>
-                Two, three, or four parts. A little curiosity.
+                Exactly {arity} parts.{' '}
+                {arity === 2 ? 'Classic alchemy, one pair at a time.' : 'A little curiosity.'}
               </p>
               <div
                 ref={dropArea}
                 className={`${styles.slotArea} ${dragPreview ? styles.dragging : ''}`}
               >
-                <div className={styles.slots}>
-                  {[0, 1, 2, 3].map((index) => {
+                <div
+                  className={styles.slots}
+                  style={{ gridTemplateColumns: `repeat(${arity}, minmax(0, 1fr))` }}
+                >
+                  {Array.from({ length: arity }, (_, index) => {
                     const id = slots[index];
                     return id ? (
                       <button
@@ -542,7 +624,7 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                     ) : (
                       <div key={index} className={styles.emptySlot}>
                         <span aria-hidden="true">+</span>
-                        <small>{index < 2 ? `PART ${index + 1}` : 'OPTIONAL'}</small>
+                        <small>PART {index + 1}</small>
                       </div>
                     );
                   })}
@@ -550,13 +632,13 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                 <p>
                   {slots.length === 0
                     ? 'Choose elements from your collection'
-                    : `${slots.length} of 4 parts · click a part to remove it`}
+                    : `${slots.length} of ${arity} parts · click a part to remove it`}
                 </p>
               </div>
               <div className={styles.combineActions}>
                 <button
                   className={styles.primaryButton}
-                  disabled={slots.length < 2}
+                  disabled={slots.length !== arity}
                   onClick={merge}
                 >
                   Combine elements <span aria-hidden="true">↗</span>
@@ -672,17 +754,16 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                 {inventory.has(selectedElement.id) && (
                   <button
                     className={styles.textButton}
-                    disabled={slots.length === 4}
+                    disabled={slots.length === arity}
                     onClick={() => addElement(selectedElement.id)}
                   >
                     Add to workbench →
                   </button>
                 )}
-                {selectedElement.atomicReason && (
+                {seedSet.has(selectedElement.id) && (
                   <p className={styles.atomicReason}>
-                    This form is supplied as a starting piece because the current source does not
-                    provide a complete supported recipe. This does not mean it is an indivisible
-                    radical.
+                    This form is a starting piece in {arity}-part mode so its recipes can be
+                    explored independently. Starting pieces can differ between modes.
                   </p>
                 )}
                 {selectedRecipes.length > 0 && (
@@ -753,10 +834,12 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
                   than once.
                 </li>
                 <li>
-                  Combine two to four parts. Matching recorded recipes unlock every resulting form.
+                  Combine exactly {arity} parts. Matching recorded recipes unlock every resulting
+                  form.
                 </li>
                 <li>Find your new forms in Discoveries and reuse them to build further.</li>
                 <li>Need a start? Open a hint to find a combination you can already make.</li>
+                <li>Switch modes any time. Discoveries are saved separately for each mode.</li>
               </ol>
               <p>
                 Part order is ignored. Some written variants are normalized to a shared element;
@@ -771,11 +854,11 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
             <p className={styles.eyebrow}>A finite collection. An open notebook.</p>
             <h3>Written forms, made explorable.</h3>
             <p>
-              This collection covers {content.stats.kanji.toLocaleString()} source-covered kanji and{' '}
-              {content.stats.elements.toLocaleString()} total elements, with{' '}
-              {content.stats.recipes.toLocaleString()} recorded recipes. It is not a claim to cover
-              every kanji. All {content.stats.reachable.toLocaleString()} included elements are
-              reachable from the starting set.
+              This {arity}-part collection covers {content.stats.kanji.toLocaleString()}{' '}
+              source-covered kanji and {content.stats.elements.toLocaleString()} total elements,
+              with {content.stats.recipes.toLocaleString()} recorded recipes. It is not a claim to
+              cover every kanji. All {content.stats.reachable.toLocaleString()} included elements
+              are reachable from the starting set.
             </p>
           </div>
           <div className={styles.sourceNote}>
@@ -801,7 +884,9 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
         </section>
         <footer className={styles.footer}>
           <p>Recipes model written forms, not historical etymology.</p>
-          <button onClick={() => resetDialog.current?.showModal()}>Reset collection</button>
+          <button onClick={() => resetDialog.current?.showModal()}>
+            Reset {arity}-part collection
+          </button>
         </footer>
       </main>
       {dragPreview && (
@@ -816,8 +901,8 @@ function Alchemy({ content }: { content: AlchemyBundle }) {
       <dialog ref={resetDialog} className={styles.resetDialog} aria-labelledby="reset-title">
         <h2 id="reset-title">Begin again?</h2>
         <p>
-          This removes your discoveries from this browser. You will keep all{' '}
-          {content.seeds.length.toLocaleString()} starting elements.
+          This removes your {arity}-part discoveries from this browser. You will keep all{' '}
+          {content.seeds.length.toLocaleString()} starting elements. Your other modes are unchanged.
         </p>
         <div>
           <button
