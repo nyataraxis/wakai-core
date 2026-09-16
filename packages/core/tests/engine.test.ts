@@ -35,19 +35,19 @@ describe('kanji alchemy core', () => {
   })
 
   it('supports 3-element fusions', () => {
-    const sig = createSignature(['宀', '女', '子'], {})
-    const fusionIndex: FusionIndex = new Map([[sig, '安']])
-    const inventory = new Set(['宀', '女', '子'])
+    const sig = createSignature(['木', '木', '木'], {})
+    const fusionIndex: FusionIndex = new Map([[sig, '森']])
+    const inventory = new Set(['木'])
     const result = fuse({
       inventory,
-      components: ['宀', '女', '子'],
+      components: ['木', '木', '木'],
       normalizationMap: {},
       fusionIndex
     })
 
     expect(result.success).toBe(true)
     if (result.success) {
-      expect(result.output).toBe('安')
+      expect(result.output).toBe('森')
     }
   })
 

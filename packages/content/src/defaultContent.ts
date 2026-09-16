@@ -1,6 +1,6 @@
 import { createSignature } from '@wakai-core/core'
 import type { ComponentId, KanjiId, NormalizationTable } from '@wakai-core/core'
-import type { ContentBundle, FusionIndexRecord, KanjiEntry } from './schema'
+import type { ContentBundle, FusionIndexRecord, KanjiEntry } from './schema.js'
 
 const DEFAULT_CONTENT_VERSION = '0.1.0'
 

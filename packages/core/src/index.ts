@@ -13,4 +13,12 @@ export {
   type KanjiId,
   type NormalizationTable,
   type PlayerState
-} from './engine'
+} from './engine.js';
+export {
+  mergeAlchemy,
+  getCraftableRecipes,
+  reachableElements,
+  readAlchemyProgress,
+  serializeAlchemyProgress
+} from './alchemy.js';
+export type { AlchemyBundle, AlchemyElement, AlchemyRecipe, AlchemyResult } from './alchemy.js';

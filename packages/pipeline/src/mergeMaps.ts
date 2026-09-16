@@ -68,8 +68,7 @@ export function buildReverseLookup(
 }
 
 export function buildMergeMaps(
-  decompositions: Map<string, KanjiDecomposition>,
-  knownKanji: Set<string>
+  decompositions: Map<string, KanjiDecomposition>
 ): Map<number, Map<string, MergeRecipe>> {
   const reverseLookup = buildReverseLookup(decompositions)
   const mergeMaps = new Map<number, Map<string, MergeRecipe>>()

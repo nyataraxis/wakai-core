@@ -4,11 +4,14 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "turbo run build \"--filter=@wakai-core/web^...\" && pnpm --filter @wakai-core/web dev",
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
     "generate": "turbo run generate --filter=@wakai-core/pipeline",
+    "data:fetch": "node scripts/fetch-source.mjs",
+    "data:check": "pnpm --filter @wakai-core/pipeline build && node packages/pipeline/dist/cli.js --check",
+    "verify": "turbo run build --filter=@wakai-core/web --filter=@wakai-core/pipeline && turbo run test lint --filter=@wakai-core/web... --filter=@wakai-core/pipeline && node scripts/verify-content.mjs",
     "release:tag": "node scripts/release-tag.mjs"
   },
   "devDependencies": {

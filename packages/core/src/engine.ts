@@ -1,67 +1,67 @@
 /** Element identifiers stored in player inventory. */
-export type ElementId = string
+export type ElementId = string;
 /** Kanji output identifiers produced by fusions. */
-export type KanjiId = string
+export type KanjiId = string;
 /** Component identifiers used to build signatures. */
-export type ComponentId = string
+export type ComponentId = string;
 
 /** Map of signature strings to resulting kanji ids. */
-export type FusionIndex = ReadonlyMap<string, KanjiId>
+export type FusionIndex = ReadonlyMap<string, KanjiId>;
 
 /** Mapping table for normalizing components before signatures. */
-export type NormalizationTable = Readonly<Record<ComponentId, ComponentId>>
+export type NormalizationTable = Readonly<Record<ComponentId, ComponentId>>;
 
 /** Persisted player state. */
 export interface PlayerState {
-  unlocked: ElementId[]
-  xp: number
+  unlocked: ElementId[];
+  xp: number;
 }
 
 /** Successful fusion result. */
 export interface FusionSuccess {
-  success: true
-  output: KanjiId
-  signature: string
-  unlockDelta: ElementId[]
-  xpDelta: number
+  success: true;
+  output: KanjiId;
+  signature: string;
+  unlockDelta: ElementId[];
+  xpDelta: number;
 }
 
 /** Failed fusion result. */
 export interface FusionFailure {
-  success: false
-  signature: string
-  unlockDelta: ElementId[]
-  xpDelta: number
+  success: false;
+  signature: string;
+  unlockDelta: ElementId[];
+  xpDelta: number;
 }
 
-export type FusionResult = FusionSuccess | FusionFailure
+export type FusionResult = FusionSuccess | FusionFailure;
 
-const MIN_FUSION_COMPONENTS = 2
+const MIN_FUSION_COMPONENTS = 2;
 
 /** Inputs for a fusion attempt. */
 export interface FusionOptions {
-  inventory: ReadonlySet<ElementId>
-  components: ComponentId[]
-  normalizationMap: NormalizationTable
-  fusionIndex: FusionIndex
-  xpOnSuccess?: number
-  xpOnFailure?: number
+  inventory: ReadonlySet<ElementId>;
+  components: ComponentId[];
+  normalizationMap: NormalizationTable;
+  fusionIndex: FusionIndex;
+  xpOnSuccess?: number;
+  xpOnFailure?: number;
 }
 
-const SIGNATURE_SEPARATOR = '|'
-const DEFAULT_XP_ON_SUCCESS = 1
-const DEFAULT_XP_ON_FAILURE = 0
-const INITIAL_XP = 0
+const SIGNATURE_SEPARATOR = '|';
+const DEFAULT_XP_ON_SUCCESS = 1;
+const DEFAULT_XP_ON_FAILURE = 0;
+const INITIAL_XP = 0;
 
 /** Create a deterministic signature from components and normalization. */
 export const createSignature = (
   components: ComponentId[],
   normalizationMap: NormalizationTable
 ): string => {
-  const normalized = components.map((component) => normalizeComponent(component, normalizationMap))
-  const sorted = [...normalized].sort(compareComponents)
-  return sorted.join(SIGNATURE_SEPARATOR)
-}
+  const normalized = components.map((component) => normalizeComponent(component, normalizationMap));
+  const sorted = [...normalized].sort(compareComponents);
+  return sorted.join(SIGNATURE_SEPARATOR);
+};
 
 /** Attempt a fusion with inventory and content mappings. */
 export const fuse = ({
@@ -78,18 +78,24 @@ export const fuse = ({
       signature: '',
       unlockDelta: [],
       xpDelta: xpOnFailure ?? DEFAULT_XP_ON_FAILURE
-    }
+    };
   }
 
-  const signature = createSignature(components, normalizationMap)
-  const output = fusionIndex.get(signature)
+  const signature = createSignature(components, normalizationMap);
+  const owned = new Set(
+    [...inventory].map((component) => normalizeComponent(component, normalizationMap))
+  );
+  if (components.some((component) => !owned.has(normalizeComponent(component, normalizationMap)))) {
+    return { success: false, signature, unlockDelta: [], xpDelta: 0 };
+  }
+  const output = fusionIndex.get(signature);
   if (!output) {
     return {
       success: false,
       signature,
       unlockDelta: [],
       xpDelta: xpOnFailure ?? DEFAULT_XP_ON_FAILURE
-    }
+    };
   }
 
   return {
@@ -97,40 +103,47 @@ export const fuse = ({
     output,
     signature,
     unlockDelta: inventory.has(output) ? [] : [output],
-    xpDelta: xpOnSuccess ?? DEFAULT_XP_ON_SUCCESS
-  }
-}
+    xpDelta: inventory.has(output) ? 0 : (xpOnSuccess ?? DEFAULT_XP_ON_SUCCESS)
+  };
+};
 
 /** Serialize player state to JSON. */
-export const serializePlayerState = (state: PlayerState): string => JSON.stringify(state)
+export const serializePlayerState = (state: PlayerState): string => JSON.stringify(state);
 
 /** Deserialize player state from JSON. */
 export const deserializePlayerState = (value: string): PlayerState => {
-  const parsed = safeParse(value)
+  const parsed = safeParse(value);
   return {
-    unlocked: Array.isArray(parsed?.unlocked)
-      ? parsed.unlocked.map((entry) => String(entry))
-      : [],
+    unlocked: Array.isArray(parsed?.unlocked) ? parsed.unlocked.map((entry) => String(entry)) : [],
     xp: typeof parsed?.xp === 'number' ? parsed.xp : INITIAL_XP
-  }
-}
+  };
+};
 
 const normalizeComponent = (
   component: ComponentId,
   normalizationMap: NormalizationTable
-): ComponentId => normalizationMap[component] ?? component
+): ComponentId => {
+  const visited = new Set<string>();
+  let current = component;
+  while (Object.hasOwn(normalizationMap, current) && normalizationMap[current] !== current) {
+    if (visited.has(current)) throw new Error(`Normalization cycle at ${current}`);
+    visited.add(current);
+    current = normalizationMap[current];
+  }
+  return current;
+};
 
 const compareComponents = (left: ComponentId, right: ComponentId): number => {
   if (left === right) {
-    return 0
+    return 0;
   }
-  return left < right ? -1 : 1
-}
+  return left < right ? -1 : 1;
+};
 
 const safeParse = (value: string): Partial<PlayerState> | null => {
   try {
-    return JSON.parse(value) as Partial<PlayerState>
+    return JSON.parse(value) as Partial<PlayerState>;
   } catch {
-    return null
+    return null;
   }
-}
+};

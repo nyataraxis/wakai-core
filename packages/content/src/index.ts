@@ -1,11 +1,12 @@
-export { getDefaultContent } from './defaultContent'
-export { loadEmbeddedContent, loadRemoteContent } from './loader'
-export { isCompatible } from './versioning'
-export { ContentSchema, KanjiEntrySchema, MergeMapSchema } from './schema'
+export { getDefaultContent } from './defaultContent.js'
+export { AlchemySchema, loadAlchemyContent } from './alchemy.js'
+export { loadEmbeddedContent, loadRemoteContent } from './loader.js'
+export { isCompatible } from './versioning.js'
+export { ContentSchema, KanjiEntrySchema, MergeMapSchema } from './schema.js'
 export type {
   ContentBundle,
   ContentVersion,
   FusionIndexRecord,
   KanjiEntry,
   MergeMapBundle
-} from './schema'
+} from './schema.js'
