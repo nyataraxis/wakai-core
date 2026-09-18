@@ -8,9 +8,12 @@
   "scripts": {
     "build": "tsc -b",
     "generate": "node dist/cli.js",
+    "generate:puzzles": "node dist/puzzleCli.js",
+    "test": "vitest run",
     "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
+    "@wakai-core/core": "workspace:*",
     "fast-xml-parser": "^4.5.1"
   },
   "devDependencies": {

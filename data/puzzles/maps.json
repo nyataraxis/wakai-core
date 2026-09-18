@@ -1,0 +1,554 @@
+{
+  "glyphs": [
+    {
+      "character": "木",
+      "svgFile": "06728.svg",
+      "sha256": "2e00b0fba5ea305e042d23c1c600e4eeff01590a1af2e2e4cf937bc76560dc82",
+      "readings": [
+        "モク",
+        "き"
+      ],
+      "meaning": "tree / wood",
+      "requiredAnswers": [
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:06728-s1",
+              "kvg:06728-s2"
+            ]
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:06728-s1"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "character": "王",
+      "svgFile": "0738b.svg",
+      "sha256": "7aeabae99483bd1056323e5a7e546627ecb7745aabe6ae52b35ee81cc7727d8d",
+      "readings": [
+        "オウ"
+      ],
+      "meaning": "king",
+      "requiredAnswers": [
+        {
+          "character": "三",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0738b-s1",
+              "kvg:0738b-s3",
+              "kvg:0738b-s4"
+            ]
+          ],
+          "readings": [
+            "サン",
+            "み"
+          ],
+          "meaning": "three"
+        },
+        {
+          "character": "二",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0738b-s1",
+              "kvg:0738b-s3"
+            ],
+            [
+              "kvg:0738b-s1",
+              "kvg:0738b-s4"
+            ],
+            [
+              "kvg:0738b-s3",
+              "kvg:0738b-s4"
+            ]
+          ],
+          "readings": [
+            "ニ",
+            "ふた"
+          ],
+          "meaning": "two"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0738b-s1"
+            ],
+            [
+              "kvg:0738b-s3"
+            ],
+            [
+              "kvg:0738b-s4"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        },
+        {
+          "character": "土",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0738b-s2",
+              "kvg:0738b-s3",
+              "kvg:0738b-s4"
+            ]
+          ],
+          "readings": [
+            "ド",
+            "ト",
+            "つち"
+          ],
+          "meaning": "earth / soil"
+        }
+      ],
+      "bonusAnswers": [
+        {
+          "character": "干",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0738b-s1",
+              "kvg:0738b-s2",
+              "kvg:0738b-s3"
+            ]
+          ],
+          "readings": [
+            "カン",
+            "ほす"
+          ],
+          "meaning": "dry"
+        }
+      ]
+    },
+    {
+      "character": "田",
+      "svgFile": "07530.svg",
+      "sha256": "8eaac047c8f8982d1b0faeb0f7a7bbaa10f81a2ebb76e8e6372c5713a002a8da",
+      "readings": [
+        "デン",
+        "た"
+      ],
+      "meaning": "rice field",
+      "requiredAnswers": [
+        {
+          "character": "日",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:07530-s1",
+              "kvg:07530-s2",
+              "kvg:07530-s4",
+              "kvg:07530-s5"
+            ]
+          ],
+          "readings": [
+            "ニチ",
+            "ジツ",
+            "ひ"
+          ],
+          "meaning": "sun / day"
+        },
+        {
+          "character": "口",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:07530-s1",
+              "kvg:07530-s2",
+              "kvg:07530-s5"
+            ]
+          ],
+          "readings": [
+            "コウ",
+            "くち"
+          ],
+          "meaning": "mouth"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:07530-s3",
+              "kvg:07530-s4"
+            ]
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:07530-s4"
+            ],
+            [
+              "kvg:07530-s5"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "character": "明",
+      "svgFile": "0660e.svg",
+      "sha256": "38b710897cb8792250535bbd05abc13cf7f2895a59fe09b8a06ea3e4d79b54c2",
+      "readings": [
+        "メイ",
+        "あかるい"
+      ],
+      "meaning": "bright",
+      "requiredAnswers": [
+        {
+          "character": "日",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0660e-s1",
+              "kvg:0660e-s2",
+              "kvg:0660e-s3",
+              "kvg:0660e-s4"
+            ]
+          ],
+          "readings": [
+            "ニチ",
+            "ジツ",
+            "ひ"
+          ],
+          "meaning": "sun / day"
+        },
+        {
+          "character": "月",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0660e-s5",
+              "kvg:0660e-s6",
+              "kvg:0660e-s7",
+              "kvg:0660e-s8"
+            ]
+          ],
+          "readings": [
+            "ゲツ",
+            "ガツ",
+            "つき"
+          ],
+          "meaning": "moon / month"
+        },
+        {
+          "character": "口",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0660e-s1",
+              "kvg:0660e-s2",
+              "kvg:0660e-s4"
+            ]
+          ],
+          "readings": [
+            "コウ",
+            "くち"
+          ],
+          "meaning": "mouth"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0660e-s3"
+            ],
+            [
+              "kvg:0660e-s4"
+            ],
+            [
+              "kvg:0660e-s7"
+            ],
+            [
+              "kvg:0660e-s8"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        },
+        {
+          "character": "二",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:0660e-s3",
+              "kvg:0660e-s4"
+            ],
+            [
+              "kvg:0660e-s7",
+              "kvg:0660e-s8"
+            ]
+          ],
+          "readings": [
+            "ニ",
+            "ふた"
+          ],
+          "meaning": "two"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "character": "休",
+      "svgFile": "04f11.svg",
+      "sha256": "7946dfc1fbff64a8105d0ab1bc8a0315a44907f90469f58425a8ed9db646ea8a",
+      "readings": [
+        "キュウ",
+        "やすむ"
+      ],
+      "meaning": "rest",
+      "requiredAnswers": [
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:04f11-s3",
+              "kvg:04f11-s4",
+              "kvg:04f11-s5",
+              "kvg:04f11-s6"
+            ]
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:04f11-s3",
+              "kvg:04f11-s4"
+            ]
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:04f11-s3"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "character": "森",
+      "svgFile": "068ee.svg",
+      "sha256": "b619df5fa876427912131d3db69008ed55bbdcd5c37705cdcdb7c381b0bfd81d",
+      "readings": [
+        "シン",
+        "もり"
+      ],
+      "meaning": "forest",
+      "requiredAnswers": [
+        {
+          "character": "林",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:068ee-s5",
+              "kvg:068ee-s6",
+              "kvg:068ee-s7",
+              "kvg:068ee-s8",
+              "kvg:068ee-s9",
+              "kvg:068ee-s10",
+              "kvg:068ee-s11",
+              "kvg:068ee-s12"
+            ]
+          ],
+          "readings": [
+            "リン",
+            "はやし"
+          ],
+          "meaning": "woods"
+        },
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:068ee-s1",
+              "kvg:068ee-s2",
+              "kvg:068ee-s3",
+              "kvg:068ee-s4"
+            ],
+            [
+              "kvg:068ee-s5",
+              "kvg:068ee-s6",
+              "kvg:068ee-s7",
+              "kvg:068ee-s8"
+            ],
+            [
+              "kvg:068ee-s9",
+              "kvg:068ee-s10",
+              "kvg:068ee-s11",
+              "kvg:068ee-s12"
+            ]
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:068ee-s1",
+              "kvg:068ee-s2"
+            ],
+            [
+              "kvg:068ee-s5",
+              "kvg:068ee-s6"
+            ],
+            [
+              "kvg:068ee-s9",
+              "kvg:068ee-s10"
+            ]
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            [
+              "kvg:068ee-s1"
+            ],
+            [
+              "kvg:068ee-s5"
+            ],
+            [
+              "kvg:068ee-s9"
+            ]
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    }
+  ],
+  "levels": [
+    {
+      "id": "first-tree",
+      "title": "A little subtraction",
+      "sources": [
+        "木"
+      ]
+    },
+    {
+      "id": "three-lines",
+      "title": "Between the lines",
+      "sources": [
+        "王"
+      ]
+    },
+    {
+      "id": "rice-field",
+      "title": "Inside the square",
+      "sources": [
+        "田"
+      ]
+    },
+    {
+      "id": "sun-and-moon",
+      "title": "Light and shadow",
+      "sources": [
+        "明"
+      ]
+    },
+    {
+      "id": "take-a-rest",
+      "title": "Under the tree",
+      "sources": [
+        "休"
+      ]
+    },
+    {
+      "id": "forest",
+      "title": "A forest of possibilities",
+      "sources": [
+        "森"
+      ]
+    },
+    {
+      "id": "bright-rest",
+      "title": "Two glyphs, one discovery list",
+      "sources": [
+        "明",
+        "休"
+      ]
+    }
+  ]
+}

@@ -9,12 +9,12 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       manifest: {
-        name: 'Wakai Core',
-        short_name: 'Wakai Core',
+        name: 'Wakai — Hidden Kanji',
+        short_name: 'Wakai',
         start_url: '.',
         display: 'standalone',
-        background_color: '#f3f4f6',
-        theme_color: '#2f6fed',
+        background_color: '#f7f8f2',
+        theme_color: '#365d47',
         icons: [
           {
             src: 'icon.svg',

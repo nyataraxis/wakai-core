@@ -9,6 +9,7 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "generate": "turbo run generate --filter=@wakai-core/pipeline",
+    "generate:puzzles": "pnpm --filter @wakai-core/core build && pnpm --filter @wakai-core/pipeline build && pnpm --filter @wakai-core/pipeline generate:puzzles",
     "release:tag": "node scripts/release-tag.mjs"
   },
   "devDependencies": {
