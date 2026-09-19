@@ -15,6 +15,16 @@ pnpm --filter @wakai-core/web lint
 
 - `src/main.tsx` app bootstrap
 - `src/App.tsx` top-level UI
+- `src/PuzzlePage.tsx` default hidden-kanji puzzle page (`/` or `#/puzzle`)
+- `src/FusionPage.tsx` original fusion demo (`#/fusion`)
+
+## Hidden kanji
+
+Select whole strokes in the displayed glyph, then check the selection. Strokes stay in their original positions and can be reused. Required discoveries complete the level; bonus discoveries are optional. The complete source glyph always counts. In two-glyph levels, selecting a stroke in the other glyph starts a fresh selection.
+
+Seven bundled levels include repeated answer variants, progressively revealed hints, readings and meanings, answer slots grouped by stroke count, and a selection preview. Stroke controls work with pointer input or Tab followed by Enter/Space. Discoveries are saved per level and content version in local storage; unavailable storage falls back to the current visit. Restart clears only the current level.
+
+Run `pnpm generate:puzzles` from the repository root after editing reviewed maps. See `../../packages/pipeline/README.md` for the generator and `../../data/puzzles/README.md` for geometry and attribution notes. Generated levels ship with the app and require no runtime API or dictionary.
 
 ## Build output
 
@@ -23,7 +33,8 @@ pnpm --filter @wakai-core/web lint
 ## Local dev
 
 1. Run `pnpm install` at the repo root.
-2. Start the dev server with the `dev` script above.
+2. Run `pnpm --filter @wakai-core/web... build` once to build its workspace dependencies.
+3. Start the dev server with the `dev` script above.
 
 ## Related packages
 
