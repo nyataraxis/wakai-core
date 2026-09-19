@@ -14,7 +14,26 @@ export {
   type NormalizationTable,
   type PlayerState
 } from './engine.js'
-
+export {
+  mergeAlchemy,
+  getCraftableRecipes,
+  reachableElements,
+  readAlchemyProgress,
+  serializeAlchemyProgress
+} from './alchemy.js'
+export type { AlchemyBundle, AlchemyElement, AlchemyRecipe, AlchemyResult } from './alchemy.js'
+export { createAlchemyMode, type MergeArity } from './modes.js'
+export {
+  advanceAlchemyJourney,
+  createAlchemyJourney,
+  createAlchemyProgression,
+  readAlchemyJourney,
+  serializeAlchemyJourney,
+  type AlchemyJourney,
+  type AlchemyLevel,
+  type AlchemyProgression,
+  type AlchemyProgressionOptions
+} from './progression.js'
 export {
   clearSelection,
   createPuzzleState,

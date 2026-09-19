@@ -46,4 +46,6 @@ a {
   display: block;
   padding: 1rem 1.5rem;
   background: #fff;
+  position: relative;
+  z-index: 10;
 }

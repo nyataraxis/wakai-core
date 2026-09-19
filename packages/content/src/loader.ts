@@ -1,4 +1,4 @@
-import { ContentSchema, type ContentBundle } from './schema'
+import { ContentSchema, type ContentBundle } from './schema.js'
 
 export interface ContentCache {
   get: (key: string) => Promise<ContentBundle | null>

@@ -1,9 +1,11 @@
 node_modules
+.pnpm-store
 dist
+dist-node
 build
 .turbo
-pnpm-lock.yaml
 .DS_Store
 apps/desktop/out
 *.tsbuildinfo
 /data/raw/**
+/apps/web/public/data/

@@ -1,4 +1,6 @@
 export { parseSvgFile, parseAllSvgs } from './svgParser.js'
+export { compileAudited, parseAuditedSvg, closure, SAFE_ALIASES } from './audited.js'
+export type { AuditedBundle, AuditedNode, AuditedRecipe, AuditedSource, SourceTree } from './audited.js'
 export {
   collectDirectComponents,
   collectVariantMappings,

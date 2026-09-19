@@ -1,4 +1,4 @@
-import type { ContentVersion } from './schema'
+import type { ContentVersion } from './schema.js'
 
 const VERSION_DELIMITER = '.'
 const SEGMENT_COUNT = 3

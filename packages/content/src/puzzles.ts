@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { validatePuzzleLevel, type PuzzleLevel } from '@wakai-core/core';
-import generated from './puzzleLevels.json';
+import generated from './puzzleLevels.json' with { type: 'json' };
 
 const answerSchema = z.object({
   character: z.string().min(1),
