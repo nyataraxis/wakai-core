@@ -15,12 +15,12 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024
       },
       manifest: {
-        name: 'Kanji Alchemy',
-        short_name: 'Kanji Alchemy',
+        name: 'Wakai — Hidden Kanji',
+        short_name: 'Wakai',
         start_url: '.',
         display: 'standalone',
-        background_color: '#f5f2e9',
-        theme_color: '#254d40',
+        background_color: '#f7f8f2',
+        theme_color: '#365d47',
         icons: [
           {
             src: 'icon.svg',

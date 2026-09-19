@@ -124,6 +124,9 @@ importers:
 
   packages/pipeline:
     dependencies:
+      '@wakai-core/core':
+        specifier: workspace:*
+        version: link:../core
       fast-xml-parser:
         specifier: ^4.5.1
         version: 4.5.7

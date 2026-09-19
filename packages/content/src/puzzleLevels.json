@@ -1,0 +1,1208 @@
+{
+  "contentVersion": "1.0.0",
+  "levels": [
+    {
+      "id": "first-tree",
+      "title": "A little subtraction",
+      "sourceGlyphs": [
+        {
+          "character": "木",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:06728-s1",
+              "path": "M19.5,39.86c2.45,0.57,5.23,0.8,8.04,0.57C40.75,39.38,63,36.5,79.78,36.15c2.8-0.06,4.54,0.1,7.34,0.5"
+            },
+            {
+              "id": "kvg:06728-s2",
+              "path": "M51.75,10.5c1.19,1.19,2,3,2,5c0,8.65,0,55.15-0.14,74.75c-0.03,4.19-0.07,7.15-0.11,8.25"
+            },
+            {
+              "id": "kvg:06728-s3",
+              "path": "M50.75,39.5c0,1.12-0.61,2.44-1.42,3.95C41.75,57.5,26.7,73.93,15.75,80.25"
+            },
+            {
+              "id": "kvg:06728-s4",
+              "path": "M54.5,39c4.62,6,23,25.75,31.76,34.61c2.27,2.29,4.61,4.39,7.49,5.64"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:06728-s1",
+                "kvg:06728-s2",
+                "kvg:06728-s3",
+                "kvg:06728-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:06728-s1",
+                "kvg:06728-s2"
+              ]
+            }
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:06728-s1"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "id": "three-lines",
+      "title": "Between the lines",
+      "sourceGlyphs": [
+        {
+          "character": "王",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:0738b-s1",
+              "path": "M29.5,21.22c2.7,0.62,5.55,0.08,8.24-0.28c10.59-1.42,22.63-2.81,33.26-3.79c3.01-0.27,6.3-0.55,9.25,0.35"
+            },
+            {
+              "id": "kvg:0738b-s2",
+              "path": "M52.4,22c1.92,2.4,1.92,3.83,1.92,5.75c0,12.13-0.02,57.7-0.02,59.75"
+            },
+            {
+              "id": "kvg:0738b-s3",
+              "path": "M29.25,55c2.62,0.49,5.24,0.3,7.87,0.08c10.32-0.87,22.57-2.65,34.75-3.65c2.95-0.24,5.81-0.27,8.76,0.07"
+            },
+            {
+              "id": "kvg:0738b-s4",
+              "path": "M13.75,90.99c4.12,0.7,8.14,0.15,12.25-0.29c17.42-1.86,39.2-3.8,59.5-4.61c3.47-0.14,6.86-0.25,10.25,0.65"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "王",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1",
+                "kvg:0738b-s2",
+                "kvg:0738b-s3",
+                "kvg:0738b-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "オウ"
+          ],
+          "meaning": "king"
+        },
+        {
+          "character": "三",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1",
+                "kvg:0738b-s3",
+                "kvg:0738b-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "サン",
+            "み"
+          ],
+          "meaning": "three"
+        },
+        {
+          "character": "二",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1",
+                "kvg:0738b-s3"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1",
+                "kvg:0738b-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s3",
+                "kvg:0738b-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ニ",
+            "ふた"
+          ],
+          "meaning": "two"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s3"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        },
+        {
+          "character": "土",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s2",
+                "kvg:0738b-s3",
+                "kvg:0738b-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ド",
+            "ト",
+            "つち"
+          ],
+          "meaning": "earth / soil"
+        }
+      ],
+      "bonusAnswers": [
+        {
+          "character": "干",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0738b-s1",
+                "kvg:0738b-s2",
+                "kvg:0738b-s3"
+              ]
+            }
+          ],
+          "readings": [
+            "カン",
+            "ほす"
+          ],
+          "meaning": "dry"
+        }
+      ]
+    },
+    {
+      "id": "rice-field",
+      "title": "Inside the square",
+      "sourceGlyphs": [
+        {
+          "character": "田",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:07530-s1",
+              "path": "M18.25,27.48c1.2,1.2,2.11,2.68,2.28,3.95C22,42.25,23.52,62.11,24.81,80c0.17,2.4,0.34,3.75,0.49,6"
+            },
+            {
+              "id": "kvg:07530-s2",
+              "path": "M20.85,29.29c8.52-0.54,50.04-3.17,61.58-4.05c4.84-0.37,7.32,2.01,7.04,5.63c-0.69,8.8-2.83,30.69-3.99,46.64c-0.18,2.44-0.34,4.75-0.47,6.86"
+            },
+            {
+              "id": "kvg:07530-s3",
+              "path": "M53.25,29c0.88,0.88,1.19,2.12,1.19,3.5c0,9.52,0.31,46.37,0.31,47.25"
+            },
+            {
+              "id": "kvg:07530-s4",
+              "path": "M24,55.5c5.75-0.5,55.12-3.25,62.5-3.5"
+            },
+            {
+              "id": "kvg:07530-s5",
+              "path": "M25.98,83.07c14.77-0.82,39.39-2.07,58.18-2.83"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "田",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s1",
+                "kvg:07530-s2",
+                "kvg:07530-s3",
+                "kvg:07530-s4",
+                "kvg:07530-s5"
+              ]
+            }
+          ],
+          "readings": [
+            "デン",
+            "た"
+          ],
+          "meaning": "rice field"
+        },
+        {
+          "character": "日",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s1",
+                "kvg:07530-s2",
+                "kvg:07530-s4",
+                "kvg:07530-s5"
+              ]
+            }
+          ],
+          "readings": [
+            "ニチ",
+            "ジツ",
+            "ひ"
+          ],
+          "meaning": "sun / day"
+        },
+        {
+          "character": "口",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s1",
+                "kvg:07530-s2",
+                "kvg:07530-s5"
+              ]
+            }
+          ],
+          "readings": [
+            "コウ",
+            "くち"
+          ],
+          "meaning": "mouth"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s3",
+                "kvg:07530-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:07530-s5"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "id": "sun-and-moon",
+      "title": "Light and shadow",
+      "sourceGlyphs": [
+        {
+          "character": "明",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:0660e-s1",
+              "path": "M16.75,25.22c0.89,0.89,1.32,2.29,1.32,3.66c0,1.11,0.07,27.44,0,37.63c-0.02,2.32-0.02,3.78-0.02,3.91"
+            },
+            {
+              "id": "kvg:0660e-s2",
+              "path": "M19.29,27.75c5.66-0.81,19.54-2.59,21.22-2.75c1.76-0.17,2.89,1.89,2.75,2.91c-0.23,1.7-0.45,27.34-0.52,36.6c-0.01,1.9-0.02,3.11-0.02,3.29"
+            },
+            {
+              "id": "kvg:0660e-s3",
+              "path": "M19.16,46.97C23.5,46.5,37,45.12,41.77,44.76"
+            },
+            {
+              "id": "kvg:0660e-s4",
+              "path": "M19,66.59c8.5-0.97,14.37-1.59,22.49-2.11"
+            },
+            {
+              "id": "kvg:0660e-s5",
+              "path": "M57.55,16c0.95,1.25,1.09,2.48,1.11,3.5c1.09,49.25-4.41,64.75-17.41,75.75"
+            },
+            {
+              "id": "kvg:0660e-s6",
+              "path": "M59.5,17.98c6.56-1.04,21.76-3.51,23.07-3.73c2.97-0.5,5.21,0.62,5.21,4.5c0,1.49,0.19,50.25,0.19,70.5c0,11.88-7.22,3.5-8.3,2.5"
+            },
+            {
+              "id": "kvg:0660e-s7",
+              "path": "M59.77,39c7.85-1,19.73-2.25,26.95-2.75"
+            },
+            {
+              "id": "kvg:0660e-s8",
+              "path": "M59.25,57.75c6.62-0.62,20-1.5,27.36-2"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "明",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s3",
+                "kvg:0660e-s4",
+                "kvg:0660e-s5",
+                "kvg:0660e-s6",
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "メイ",
+            "あかるい"
+          ],
+          "meaning": "bright"
+        },
+        {
+          "character": "日",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s3",
+                "kvg:0660e-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ニチ",
+            "ジツ",
+            "ひ"
+          ],
+          "meaning": "sun / day"
+        },
+        {
+          "character": "月",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s5",
+                "kvg:0660e-s6",
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "ゲツ",
+            "ガツ",
+            "つき"
+          ],
+          "meaning": "moon / month"
+        },
+        {
+          "character": "口",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "コウ",
+            "くち"
+          ],
+          "meaning": "mouth"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s3"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s7"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        },
+        {
+          "character": "二",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s3",
+                "kvg:0660e-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "ニ",
+            "ふた"
+          ],
+          "meaning": "two"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "id": "take-a-rest",
+      "title": "Under the tree",
+      "sourceGlyphs": [
+        {
+          "character": "休",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:04f11-s1",
+              "path": "M35,16.5c0.25,1.75,0.25,4.25-0.88,6.8C28.91,35.01,22.37,46.02,10.5,60.29"
+            },
+            {
+              "id": "kvg:04f11-s2",
+              "path": "M26.28,42.5c0.72,1.25,1.26,3.48,1.26,4.75c0,12.75-0.07,29.88-0.26,42.25c-0.02,1.54-0.04,2.97-0.04,4.25"
+            },
+            {
+              "id": "kvg:04f11-s3",
+              "path": "M37.65,38.83c2.45,0.97,5.18,0.75,7.73,0.54c11.76-0.97,24.94-3.35,37.49-4.01c2.65-0.14,5.39-0.22,7.99,0.39"
+            },
+            {
+              "id": "kvg:04f11-s4",
+              "path": "M61.43,14c0.82,0.75,1.87,2.12,1.87,3.7c0,8.8,0.05,53.72-0.12,72.05c-0.03,2.88-0.06,4.91-0.08,5.75"
+            },
+            {
+              "id": "kvg:04f11-s5",
+              "path": "M62.43,38.32c0,2.18-1.1,4.31-1.9,6.04C54.57,57.4,44.96,71.84,35,78.75"
+            },
+            {
+              "id": "kvg:04f11-s6",
+              "path": "M64.12,38.08c4.45,8.37,16.21,25.33,24.99,33.19c1.96,1.76,4.35,4.18,6.9,5"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "休",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:04f11-s1",
+                "kvg:04f11-s2",
+                "kvg:04f11-s3",
+                "kvg:04f11-s4",
+                "kvg:04f11-s5",
+                "kvg:04f11-s6"
+              ]
+            }
+          ],
+          "readings": [
+            "キュウ",
+            "やすむ"
+          ],
+          "meaning": "rest"
+        },
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:04f11-s3",
+                "kvg:04f11-s4",
+                "kvg:04f11-s5",
+                "kvg:04f11-s6"
+              ]
+            }
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:04f11-s3",
+                "kvg:04f11-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:04f11-s3"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "id": "forest",
+      "title": "A forest of possibilities",
+      "sourceGlyphs": [
+        {
+          "character": "森",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:068ee-s1",
+              "path": "M30.12,23.67c0.87,0.24,4.4,0.62,6.7,0.33c11.37-1.4,20.02-2,36.05-3.21c2.32-0.18,2.92-0.24,4.37,0"
+            },
+            {
+              "id": "kvg:068ee-s2",
+              "path": "M52.75,10C53.5,10.75,54,11.75,54,13.16c0,4.34,0.06,22-0.15,31.6c-0.03,1.48-0.07,2.69-0.1,3.5"
+            },
+            {
+              "id": "kvg:068ee-s3",
+              "path": "M51.5,22.9c0,1.1-0.27,1.78-0.81,2.41C43,34.25,31.34,41.69,20.5,45.5"
+            },
+            {
+              "id": "kvg:068ee-s4",
+              "path": "M56,24.4c5.25,4.35,22.25,15.35,29.03,17.6c1.77,0.59,3.07,1.25,4.72,1.5"
+            },
+            {
+              "id": "kvg:068ee-s5",
+              "path": "M12.46,61.06c0.77,0.22,3.1,0.42,5.14,0.25c6.65-0.56,15.15-1.69,23.13-2.49c2.04-0.21,3.85-0.42,5.13-0.2"
+            },
+            {
+              "id": "kvg:068ee-s6",
+              "path": "M32.61,46.29c0.86,0.86,1.42,1.96,1.42,3.16c0,0.79,0.06,31.46-0.14,44.06c-0.03,2.17-0.07,3.78-0.1,4.6"
+            },
+            {
+              "id": "kvg:068ee-s7",
+              "path": "M33.07,60.68c0,1.2-0.44,2.02-1.04,3.12C28,71.12,19.75,83,13.5,88"
+            },
+            {
+              "id": "kvg:068ee-s8",
+              "path": "M37.61,67.19c2.08,1.43,4.69,4.07,6.51,6.31"
+            },
+            {
+              "id": "kvg:068ee-s9",
+              "path": "M52.28,59.98c1.72,0.14,2.82,0.09,4.54-0.08c8.93-0.91,17.81-1.66,26.47-2.43c2.01-0.18,3.77-0.22,5.04,0"
+            },
+            {
+              "id": "kvg:068ee-s10",
+              "path": "M68.12,42.75c1.07,1.06,1.42,2.62,1.42,3.91c0,0.8,0.06,35.28-0.15,48.09c-0.03,2.01-0.06,3.49-0.1,4.25"
+            },
+            {
+              "id": "kvg:068ee-s11",
+              "path": "M67.84,59.75c0,1-0.19,1.62-0.81,2.87c-4.52,9.22-14.61,21.74-21.78,26.14"
+            },
+            {
+              "id": "kvg:068ee-s12",
+              "path": "M69.77,58.93c7.05,10.52,18.34,24.02,24.07,28.17c1.63,1.18,2.55,2,3.92,2.4"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "森",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s1",
+                "kvg:068ee-s10",
+                "kvg:068ee-s11",
+                "kvg:068ee-s12",
+                "kvg:068ee-s2",
+                "kvg:068ee-s3",
+                "kvg:068ee-s4",
+                "kvg:068ee-s5",
+                "kvg:068ee-s6",
+                "kvg:068ee-s7",
+                "kvg:068ee-s8",
+                "kvg:068ee-s9"
+              ]
+            }
+          ],
+          "readings": [
+            "シン",
+            "もり"
+          ],
+          "meaning": "forest"
+        },
+        {
+          "character": "林",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s10",
+                "kvg:068ee-s11",
+                "kvg:068ee-s12",
+                "kvg:068ee-s5",
+                "kvg:068ee-s6",
+                "kvg:068ee-s7",
+                "kvg:068ee-s8",
+                "kvg:068ee-s9"
+              ]
+            }
+          ],
+          "readings": [
+            "リン",
+            "はやし"
+          ],
+          "meaning": "woods"
+        },
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s1",
+                "kvg:068ee-s2",
+                "kvg:068ee-s3",
+                "kvg:068ee-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s5",
+                "kvg:068ee-s6",
+                "kvg:068ee-s7",
+                "kvg:068ee-s8"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s10",
+                "kvg:068ee-s11",
+                "kvg:068ee-s12",
+                "kvg:068ee-s9"
+              ]
+            }
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s1",
+                "kvg:068ee-s2"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s5",
+                "kvg:068ee-s6"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s10",
+                "kvg:068ee-s9"
+              ]
+            }
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s1"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s5"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:068ee-s9"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        }
+      ],
+      "bonusAnswers": []
+    },
+    {
+      "id": "bright-rest",
+      "title": "Two glyphs, one discovery list",
+      "sourceGlyphs": [
+        {
+          "character": "明",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:0660e-s1",
+              "path": "M16.75,25.22c0.89,0.89,1.32,2.29,1.32,3.66c0,1.11,0.07,27.44,0,37.63c-0.02,2.32-0.02,3.78-0.02,3.91"
+            },
+            {
+              "id": "kvg:0660e-s2",
+              "path": "M19.29,27.75c5.66-0.81,19.54-2.59,21.22-2.75c1.76-0.17,2.89,1.89,2.75,2.91c-0.23,1.7-0.45,27.34-0.52,36.6c-0.01,1.9-0.02,3.11-0.02,3.29"
+            },
+            {
+              "id": "kvg:0660e-s3",
+              "path": "M19.16,46.97C23.5,46.5,37,45.12,41.77,44.76"
+            },
+            {
+              "id": "kvg:0660e-s4",
+              "path": "M19,66.59c8.5-0.97,14.37-1.59,22.49-2.11"
+            },
+            {
+              "id": "kvg:0660e-s5",
+              "path": "M57.55,16c0.95,1.25,1.09,2.48,1.11,3.5c1.09,49.25-4.41,64.75-17.41,75.75"
+            },
+            {
+              "id": "kvg:0660e-s6",
+              "path": "M59.5,17.98c6.56-1.04,21.76-3.51,23.07-3.73c2.97-0.5,5.21,0.62,5.21,4.5c0,1.49,0.19,50.25,0.19,70.5c0,11.88-7.22,3.5-8.3,2.5"
+            },
+            {
+              "id": "kvg:0660e-s7",
+              "path": "M59.77,39c7.85-1,19.73-2.25,26.95-2.75"
+            },
+            {
+              "id": "kvg:0660e-s8",
+              "path": "M59.25,57.75c6.62-0.62,20-1.5,27.36-2"
+            }
+          ]
+        },
+        {
+          "character": "休",
+          "viewBox": "0 0 109 109",
+          "strokes": [
+            {
+              "id": "kvg:04f11-s1",
+              "path": "M35,16.5c0.25,1.75,0.25,4.25-0.88,6.8C28.91,35.01,22.37,46.02,10.5,60.29"
+            },
+            {
+              "id": "kvg:04f11-s2",
+              "path": "M26.28,42.5c0.72,1.25,1.26,3.48,1.26,4.75c0,12.75-0.07,29.88-0.26,42.25c-0.02,1.54-0.04,2.97-0.04,4.25"
+            },
+            {
+              "id": "kvg:04f11-s3",
+              "path": "M37.65,38.83c2.45,0.97,5.18,0.75,7.73,0.54c11.76-0.97,24.94-3.35,37.49-4.01c2.65-0.14,5.39-0.22,7.99,0.39"
+            },
+            {
+              "id": "kvg:04f11-s4",
+              "path": "M61.43,14c0.82,0.75,1.87,2.12,1.87,3.7c0,8.8,0.05,53.72-0.12,72.05c-0.03,2.88-0.06,4.91-0.08,5.75"
+            },
+            {
+              "id": "kvg:04f11-s5",
+              "path": "M62.43,38.32c0,2.18-1.1,4.31-1.9,6.04C54.57,57.4,44.96,71.84,35,78.75"
+            },
+            {
+              "id": "kvg:04f11-s6",
+              "path": "M64.12,38.08c4.45,8.37,16.21,25.33,24.99,33.19c1.96,1.76,4.35,4.18,6.9,5"
+            }
+          ]
+        }
+      ],
+      "requiredAnswers": [
+        {
+          "character": "明",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s3",
+                "kvg:0660e-s4",
+                "kvg:0660e-s5",
+                "kvg:0660e-s6",
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "メイ",
+            "あかるい"
+          ],
+          "meaning": "bright"
+        },
+        {
+          "character": "日",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s3",
+                "kvg:0660e-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ニチ",
+            "ジツ",
+            "ひ"
+          ],
+          "meaning": "sun / day"
+        },
+        {
+          "character": "月",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s5",
+                "kvg:0660e-s6",
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "ゲツ",
+            "ガツ",
+            "つき"
+          ],
+          "meaning": "moon / month"
+        },
+        {
+          "character": "口",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s1",
+                "kvg:0660e-s2",
+                "kvg:0660e-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "コウ",
+            "くち"
+          ],
+          "meaning": "mouth"
+        },
+        {
+          "character": "一",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s3"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s7"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s8"
+              ]
+            },
+            {
+              "sourceGlyph": 1,
+              "strokeIds": [
+                "kvg:04f11-s3"
+              ]
+            }
+          ],
+          "readings": [
+            "イチ",
+            "ひと"
+          ],
+          "meaning": "one"
+        },
+        {
+          "character": "二",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s3",
+                "kvg:0660e-s4"
+              ]
+            },
+            {
+              "sourceGlyph": 0,
+              "strokeIds": [
+                "kvg:0660e-s7",
+                "kvg:0660e-s8"
+              ]
+            }
+          ],
+          "readings": [
+            "ニ",
+            "ふた"
+          ],
+          "meaning": "two"
+        },
+        {
+          "character": "休",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 1,
+              "strokeIds": [
+                "kvg:04f11-s1",
+                "kvg:04f11-s2",
+                "kvg:04f11-s3",
+                "kvg:04f11-s4",
+                "kvg:04f11-s5",
+                "kvg:04f11-s6"
+              ]
+            }
+          ],
+          "readings": [
+            "キュウ",
+            "やすむ"
+          ],
+          "meaning": "rest"
+        },
+        {
+          "character": "木",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 1,
+              "strokeIds": [
+                "kvg:04f11-s3",
+                "kvg:04f11-s4",
+                "kvg:04f11-s5",
+                "kvg:04f11-s6"
+              ]
+            }
+          ],
+          "readings": [
+            "モク",
+            "き"
+          ],
+          "meaning": "tree / wood"
+        },
+        {
+          "character": "十",
+          "type": "KANJI",
+          "variants": [
+            {
+              "sourceGlyph": 1,
+              "strokeIds": [
+                "kvg:04f11-s3",
+                "kvg:04f11-s4"
+              ]
+            }
+          ],
+          "readings": [
+            "ジュウ",
+            "とお"
+          ],
+          "meaning": "ten"
+        }
+      ],
+      "bonusAnswers": []
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 # Web App
 
-Vite + React Kanji Alchemy laboratory. This is the primary application target and
-the source build for the mobile and desktop wrappers. It loads the audited
-`data/generated/alchemy.json`, with two-to-four-part merges, multiple results,
-playable hints, source details, and local progress.
+Vite + React client for the hidden-kanji puzzle and Kanji Alchemy laboratory. This
+is the primary application target and the source build for the mobile and desktop
+wrappers. Hidden kanji is the default page; `#/fusion` loads the audited Alchemy
+dataset with two-to-four-part merges, multiple results, hints, source details, and
+local progress.
 
 ## Scripts
 
@@ -18,6 +19,16 @@ pnpm --filter @wakai-core/web lint
 
 - `src/main.tsx` app bootstrap
 - `src/App.tsx` top-level UI
+- `src/PuzzlePage.tsx` default hidden-kanji puzzle page (`/` or `#/puzzle`)
+- `src/FusionPage.tsx` original fusion demo (`#/fusion`)
+
+## Hidden kanji
+
+Select whole strokes in the displayed glyph, then check the selection. Strokes stay in their original positions and can be reused. Required discoveries complete the level; bonus discoveries are optional. The complete source glyph always counts. In two-glyph levels, selecting a stroke in the other glyph starts a fresh selection.
+
+Seven bundled levels include repeated answer variants, progressively revealed hints, readings and meanings, answer slots grouped by stroke count, and a selection preview. Stroke controls work with pointer input or Tab followed by Enter/Space. Discoveries are saved per level and content version in local storage; unavailable storage falls back to the current visit. Restart clears only the current level.
+
+Run `pnpm generate:puzzles` from the repository root after editing reviewed maps. See `../../packages/pipeline/README.md` for the generator and `../../data/puzzles/README.md` for geometry and attribution notes. Generated levels ship with the app and require no runtime API or dictionary.
 
 ## Build output
 
