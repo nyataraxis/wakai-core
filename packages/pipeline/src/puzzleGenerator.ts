@@ -101,7 +101,7 @@ export function glyphDigest(svg: string): string {
   return createHash('sha256').update(svg.replace(/\r\n/g, '\n')).digest('hex');
 }
 
-function parseGlyph(character: string, svg: string): PuzzleGlyph {
+export function parseGlyph(character: string, svg: string): PuzzleGlyph {
   const cleaned = svg.replace(/<!DOCTYPE[^>]*\[[\s\S]*?\]>/g, '');
   if (XMLValidator.validate(cleaned) !== true) throw new Error(`Malformed SVG for ${character}`);
   const parser = new XMLParser({ ignoreAttributes: false, processEntities: false });

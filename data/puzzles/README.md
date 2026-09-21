@@ -1,4 +1,36 @@
-# Reviewed stroke puzzle sources
+# Hidden Kanji puzzle sources
+
+## 500-level campaign
+
+`campaign.json` defines 500 distinct single-kanji levels from the KanjiVG revision
+in `data/source-lock.json`. `campaign-glyphs/` holds their unmodified source SVGs,
+including original copyright notices. The manifest pins each file's SHA-256 digest.
+These assets, the derived mappings, audit, and generated level geometry are KanjiVG
+adaptations under CC BY-SA 3.0, copyright Ulrich Apel and contributors.
+
+Run `pnpm generate:puzzles` to compile the bundled campaign offline. To rebuild the
+catalog selection, run `pnpm data:fetch`, `pnpm catalog:puzzles`, then
+`pnpm generate:puzzles`. Catalog generation requires the detached pinned checkout.
+
+Every selected glyph has at least 12 strokes and two common hidden kanji in addition
+to the full source. A fixed featured list opens with intricate characters; remaining
+sources rank deterministically by required-answer count, stroke count, and code point.
+There are no repeated-source filler levels or multi-glyph combinations.
+
+Answers use complete named KanjiVG groups with unchanged stroke paths. Partial,
+split, marked variant, component-only, and noncanonical stroke-count groups are
+rejected. No radical normalization or cross-group shape inference is used. Repeated
+instances are accepted as alternate selections. A curated common-character list
+defines required answers; other eligible kanji are bonuses. `campaign-audit.json`
+records the canonical counts and rejected groups for selected glyphs.
+
+This is an automatically source-mapped catalog, not 500 individually reviewed or
+exhaustive visual puzzles. KanjiVG annotations establish the accepted subsets;
+unannotated visual discoveries can be missing. Further human-reviewed subsets can
+be added to the manifest. Rebuilding the catalog replaces such edits, so preserve
+them separately before running `catalog:puzzles`.
+
+## Original reviewed fixtures
 
 The SVG fixtures in `glyphs/` are copied without modification from KanjiVG, copyright © 2009/2010/2011 Ulrich Apel and contributors. KanjiVG: https://kanjivg.tagaini.net/ . Upstream source: https://github.com/KanjiVG/kanjivg/tree/master/kanji .
 

@@ -8,7 +8,25 @@ pnpm generate:puzzles
 
 From the repository root, this builds the core and pipeline packages and writes `packages/content/src/puzzleLevels.json`. Generation needs no network access or complete KanjiVG checkout. Run `pnpm --filter @wakai-core/pipeline test` to check generation, source integrity, and reproducibility against the committed output.
 
-## Puzzle inputs
+## Current 500-level campaign
+
+`data/puzzles/campaign.json` is the indexed catalog: 500 unique source glyphs,
+stable code-point-based level IDs, per-file hashes, required answers, and bonuses.
+`campaign-glyphs/` contains the exact pinned SVGs. `pnpm generate:puzzles` compiles
+these offline; pipeline tests regenerate all levels and submit every answer variant.
+
+To reselect the catalog from source, run `pnpm data:fetch`, `pnpm catalog:puzzles`,
+then `pnpm generate:puzzles`. Selection uses complex single kanji (12+ strokes),
+at least two familiar proper subsets, a featured opening sequence, and deterministic
+ranking by answer richness. The source-group extractor rejects variants, fragments,
+split groups, radical aliases, and mismatched canonical stroke counts. It preserves
+the actual paths and never uses Alchemy normalization. The audit records exclusions.
+
+These are source-mapped puzzles, not an exhaustive list of every shape visible in
+each glyph or a claim of manual review of all 500. See `data/puzzles/README.md` for
+the generation policy, source attribution, and limits.
+
+## Original reviewed fixture inputs (retained for regression tests)
 
 - `data/generated/content.full.json` resolves each source character to its indexed KanjiVG filename.
 - `data/puzzles/glyphs/` contains six exact KanjiVG SVG fixtures, including their upstream copyright headers.
@@ -25,7 +43,7 @@ The digest is calculated over the UTF-8 SVG text with CRLF converted to LF so th
 3. Add a level recipe with a stable ID, title, and ordered source characters. Existing glyph maps can be reused in multi-source recipes.
 4. Regenerate, inspect the resulting glyph and every answer visually, then run the pipeline and core tests. Commit the reviewed input and generated output together.
 
-Component indexes alone cannot establish valid visual subtraction: a radical may be altered, disconnected, or only a fragment of an independent character. The generator intentionally **does not turn normalized component labels into answers**. Its current seven levels are a reviewed starter catalog, not an exhaustive generator for arbitrary kanji. Broad automatic discovery would need a separate geometric candidate/review system.
+Component indexes alone cannot establish valid visual subtraction: a radical may be altered, disconnected, or only a fragment of an independent character. The generator intentionally **does not turn normalized component labels into answers**. These seven legacy fixtures are retained for compiler regression tests. The current campaign above uses exact source groups, with conservative exclusions, rather than arbitrary geometric shape recognition.
 
 The starter catalog uses kanji only. The data model supports kana for future bonus or special levels. Visually identical kanji/kana pairs (such as 口/ロ or 二/ニ) cannot both map to the same subset because exact-match submission would become ambiguous. No strokes cross source glyph boundaries.
 

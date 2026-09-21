@@ -10,6 +10,11 @@ Alike 3.0**. The adapted datasets are distributed under the same license.
 - Full license text: [KANJIVG-LICENSE.txt](KANJIVG-LICENSE.txt)
 
 The exact source revision and SHA-256 digest are embedded in `alchemy.json`.
+The hidden-kanji campaign in `puzzles/campaign.json`, its audit, copied SVGs, and
+generated `packages/content/src/puzzleLevels.json` are also KanjiVG derivatives
+under CC BY-SA 3.0. The manifest records the revision and individual SVG digests.
+These levels extract exact named stroke groups, filter incomplete and variant
+forms, separate common required answers from bonuses, and rank single glyphs.
 Changes: select canonical ideograph SVGs, parse complete component boundaries,
 apply an explicit shape-alias table, derive bounded 2–4 component recipes,
 retain ambiguous outputs, and compute seeds and reachability witnesses.

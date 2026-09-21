@@ -13,7 +13,13 @@ claim to include every Unicode kanji or to be an expert-validated dictionary.
 
 Read the [design and development plan](docs/kanji-alchemy.md) for the Alchemy
 audit, model decisions, acceptance checks, and next steps. Hidden-kanji levels use
-the reviewed maps under `data/puzzles`; Alchemy uses `data/generated/alchemy.json`.
+the source-mapped catalog under `data/puzzles`; Alchemy uses `data/generated/alchemy.json`.
+
+The default campaign has 500 distinct single-kanji puzzles, starting with complex
+characters such as 鬱, 議, and 響. Complete a puzzle to unlock the next, or open
+**Settings → Unlock all levels · Dev mode** to explore the entire searchable
+collection. The setting persists independently of discoveries. The main navigation
+currently focuses on Hidden Kanji; Alchemy remains available through its direct URL.
 
 ## Requirements
 
@@ -37,7 +43,8 @@ pnpm verify       # web build, package tests/lint, and full gameplay reachabilit
 pnpm data:fetch   # fetch the exact KanjiVG revision (network required)
 pnpm generate     # rebuild data from the pinned source and digest
 pnpm data:check   # compare a fresh generation with committed artifacts
-pnpm generate:puzzles # rebuild reviewed hidden-kanji levels
+pnpm generate:puzzles # rebuild 500 hidden-kanji levels from bundled sources
+pnpm catalog:puzzles  # reselect the catalog from the pinned data:fetch checkout
 ```
 
 ## GitHub Pages
