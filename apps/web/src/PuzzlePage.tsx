@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { getPuzzleContent } from '@wakai-core/content';
 import {
   clearSelection,
@@ -9,15 +9,68 @@ import {
   type PuzzleLevel,
   type PuzzleState
 } from '@wakai-core/core';
-import { restoreProgress, saveProgress } from './puzzleProgress';
+import {
+  lastUnlockedLevel,
+  restoreCompletedLevels,
+  restoreProgress,
+  restoreSettings,
+  saveCompletedLevels,
+  saveProgress,
+  saveSettings
+} from './puzzleProgress';
 import styles from './PuzzlePage.module.css';
 
 const content = getPuzzleContent();
+const levelsPerPage = 24;
 const strokeCount = (answer: PuzzleAnswer) =>
   Math.min(...answer.variants.map((variant) => variant.strokeIds.length));
 
 export const PuzzlePage = () => {
   const [levelIndex, setLevelIndex] = useState(0);
+  const [settings, setSettings] = useState(restoreSettings);
+  const [settingsSaved, setSettingsSaved] = useState(true);
+  const [completed, setCompleted] = useState(() =>
+    restoreCompletedLevels(content.contentVersion, content.levels)
+  );
+  const [panel, setPanel] = useState<'levels' | 'settings' | null>(null);
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(0);
+  const browseButton = useRef<HTMLButtonElement>(null);
+  const settingsButton = useRef<HTMLButtonElement>(null);
+  const unlockedThrough = lastUnlockedLevel(content.levels, completed);
+  const query = search.trim().toLocaleLowerCase();
+  const matchingLevels = content.levels
+    .map((level, index) => ({ level, index }))
+    .filter(({ level, index }) =>
+      `${index + 1} ${level.title} ${level.sourceGlyphs.map((glyph) => glyph.character).join('')}`
+        .toLocaleLowerCase()
+        .includes(query)
+    );
+  const pageCount = Math.max(1, Math.ceil(matchingLevels.length / levelsPerPage));
+  const shownPage = Math.min(page, pageCount - 1);
+  const visibleLevels = matchingLevels.slice(
+    shownPage * levelsPerPage,
+    (shownPage + 1) * levelsPerPage
+  );
+  const markComplete = useCallback((id: string) => {
+    setCompleted((previous) => (previous.includes(id) ? previous : [...previous, id]));
+  }, []);
+
+  useEffect(() => {
+    saveCompletedLevels(content.contentVersion, completed);
+  }, [completed]);
+
+  const openLevels = () => {
+    setSearch('');
+    setPage(Math.floor(levelIndex / levelsPerPage));
+    setPanel(panel === 'levels' ? null : 'levels');
+  };
+
+  const closePanel = () => {
+    setPanel(null);
+    (panel === 'settings' ? settingsButton : browseButton).current?.focus();
+  };
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -27,13 +80,19 @@ export const PuzzlePage = () => {
           </span>
           wakai<span className={styles.brandDot}>.</span>
         </a>
-        <nav aria-label="Game modes" className={styles.nav}>
+        <nav aria-label="Puzzle navigation" className={styles.nav}>
           <a href="#/puzzle" aria-current="page">
             Hidden kanji
           </a>
-          <a href="#/fusion">
-            Fusion lab <span aria-hidden="true">↗</span>
-          </a>
+          <button
+            ref={settingsButton}
+            className={styles.textButton}
+            aria-expanded={panel === 'settings'}
+            aria-controls="puzzle-settings"
+            onClick={() => setPanel(panel === 'settings' ? null : 'settings')}
+          >
+            Settings{settings.unlockAllLevels ? ' · Dev mode' : ''}
+          </button>
         </nav>
       </header>
       <main className={styles.main}>
@@ -45,26 +104,156 @@ export const PuzzlePage = () => {
             <h1>
               Less ink. <span>More to find.</span>
             </h1>
-            <p className={styles.description}>A whole world of kanji, hidden in plain sight.</p>
+            <p className={styles.description}>
+              {content.levels.length} intricate kanji. A world of shapes hidden inside each one.
+            </p>
           </div>
-          <label className={styles.levelPicker}>
-            YOUR EXPLORATION
-            <select
-              value={levelIndex}
-              onChange={(event) => setLevelIndex(Number(event.target.value))}
+          <div className={styles.levelPicker}>
+            <span>
+              {completed.length} / {content.levels.length} COMPLETE
+            </span>
+            <button
+              ref={browseButton}
+              className={styles.secondaryButton}
+              aria-expanded={panel === 'levels'}
+              aria-controls="puzzle-levels"
+              onClick={openLevels}
             >
-              {content.levels.map((level, index) => (
-                <option key={level.id} value={index}>
-                  {String(index + 1).padStart(2, '0')} · {level.title}
-                </option>
-              ))}
-            </select>
-          </label>
+              Level {levelIndex + 1} of {content.levels.length} · Browse levels
+            </button>
+          </div>
         </div>
+        {panel === 'settings' && (
+          <section
+            id="puzzle-settings"
+            className={styles.campaignPanel}
+            aria-labelledby="settings-title"
+          >
+            <div className={styles.panelHeader}>
+              <h2 id="settings-title">Puzzle settings</h2>
+              <button className={styles.textButton} onClick={closePanel}>
+                Close settings
+              </button>
+            </div>
+            <label className={styles.settingToggle}>
+              <input
+                type="checkbox"
+                checked={settings.unlockAllLevels}
+                onChange={(event) => {
+                  const next = { unlockAllLevels: event.target.checked };
+                  setSettings(next);
+                  setSettingsSaved(saveSettings(next));
+                  if (!next.unlockAllLevels && levelIndex > unlockedThrough)
+                    setLevelIndex(unlockedThrough);
+                }}
+              />
+              <span>
+                <strong>Unlock all levels · Dev mode</strong>
+                <span>
+                  Explore any puzzle now. Discoveries still count; turning this off restores normal
+                  level unlocking.
+                </span>
+              </span>
+            </label>
+            <p className={styles.panelNote}>
+              {settingsSaved
+                ? 'Settings are saved on this device.'
+                : 'Settings are available for this visit only.'}
+            </p>
+          </section>
+        )}
+        {panel === 'levels' && (
+          <section
+            id="puzzle-levels"
+            className={styles.campaignPanel}
+            aria-labelledby="levels-title"
+          >
+            <div className={styles.panelHeader}>
+              <div>
+                <h2 id="levels-title">Explore the collection</h2>
+                <p>
+                  {settings.unlockAllLevels
+                    ? 'Dev mode · All levels are available.'
+                    : 'Complete each puzzle to unlock the next.'}
+                </p>
+              </div>
+              <button className={styles.textButton} onClick={closePanel}>
+                Close levels
+              </button>
+            </div>
+            <label className={styles.levelSearch}>
+              Find a level
+              <input
+                type="search"
+                placeholder="Kanji, title, or level number"
+                value={search}
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                  setPage(0);
+                }}
+              />
+            </label>
+            <div className={styles.levelGrid}>
+              {visibleLevels.map(({ level, index }) => {
+                const locked = !settings.unlockAllLevels && index > unlockedThrough;
+                const done = completed.includes(level.id);
+                const glyphs = level.sourceGlyphs.map((glyph) => glyph.character).join('');
+                return (
+                  <button
+                    key={level.id}
+                    className={styles.levelCard}
+                    disabled={locked}
+                    aria-current={levelIndex === index ? 'true' : undefined}
+                    onClick={() => {
+                      setLevelIndex(index);
+                      closePanel();
+                    }}
+                  >
+                    <span className={styles.levelCardNumber}>
+                      {String(index + 1).padStart(3, '0')} ·{' '}
+                      {locked ? 'Locked' : done ? 'Complete' : 'Explore'}
+                    </span>
+                    <span className={styles.levelCardGlyph} lang="ja">
+                      {glyphs}
+                    </span>
+                    <span className={styles.levelCardTitle}>
+                      {level.title === glyphs
+                        ? `${level.sourceGlyphs.reduce((count, glyph) => count + glyph.strokes.length, 0)} strokes · ${level.requiredAnswers.length} discoveries`
+                        : level.title}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            {matchingLevels.length === 0 && (
+              <p className={styles.panelNote}>No matching levels. Try another kanji or number.</p>
+            )}
+            <div className={styles.pagination}>
+              <button
+                className={styles.secondaryButton}
+                disabled={shownPage === 0}
+                onClick={() => setPage(shownPage - 1)}
+              >
+                Previous
+              </button>
+              <span aria-live="polite">
+                Page {shownPage + 1} of {pageCount} · {matchingLevels.length} levels
+              </span>
+              <button
+                className={styles.secondaryButton}
+                disabled={shownPage >= pageCount - 1}
+                onClick={() => setPage(shownPage + 1)}
+              >
+                Next
+              </button>
+            </div>
+          </section>
+        )}
         <PuzzleGame
           key={content.levels[levelIndex].id}
           level={content.levels[levelIndex]}
           levelIndex={levelIndex}
+          onComplete={markComplete}
           onNext={
             levelIndex < content.levels.length - 1 ? () => setLevelIndex(levelIndex + 1) : undefined
           }
@@ -115,9 +304,10 @@ interface PuzzleGameProps {
   level: PuzzleLevel;
   levelIndex: number;
   onNext?: () => void;
+  onComplete: (id: string) => void;
 }
 
-const PuzzleGame = ({ level, levelIndex, onNext }: PuzzleGameProps) => {
+const PuzzleGame = ({ level, levelIndex, onNext, onComplete }: PuzzleGameProps) => {
   const [state, setState] = useState(() => restoreProgress(content.contentVersion, level));
   const [feedback, setFeedback] = useState('Select the strokes of a kanji you can see.');
   const [hint, setHint] = useState<{ character: string; stage: number } | null>(null);
@@ -134,6 +324,10 @@ const PuzzleGame = ({ level, levelIndex, onNext }: PuzzleGameProps) => {
   useEffect(() => {
     setSaved(saveProgress(content.contentVersion, level, state));
   }, [level, state]);
+
+  useEffect(() => {
+    if (complete) onComplete(level.id);
+  }, [complete, level.id, onComplete]);
 
   const changeState = (next: PuzzleState) => {
     setState(next);
@@ -175,7 +369,9 @@ const PuzzleGame = ({ level, levelIndex, onNext }: PuzzleGameProps) => {
       setFeedback(
         answer.readings?.length
           ? `Reading: ${answer.readings.join(' · ')}`
-          : `Meaning: ${answer.meaning ?? 'Keep looking for the highlighted shape.'}`
+          : answer.meaning
+            ? `Meaning: ${answer.meaning}`
+            : 'No reading clue for this answer. The next hint highlights a stroke.'
       );
     if (stage === 3)
       setFeedback('The gold stroke is part of the answer. What else belongs with it?');

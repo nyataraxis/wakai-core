@@ -109,13 +109,128 @@
   gap: 10px;
   min-width: 216px;
 }
-.levelPicker select {
+.campaignPanel {
+  padding: 24px;
+  margin: 0 0 26px;
+  border: 1px solid #dde3d4;
+  border-radius: 14px;
   background: #fffefa;
-  color: #304a3e;
-  padding: 13px 35px 13px 14px;
+}
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.panelHeader h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.panelHeader p,
+.panelNote {
+  font-size: 12px;
+  color: #728166;
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+.panelHeader button {
+  flex-shrink: 0;
+}
+.settingToggle {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.settingToggle input {
+  width: 20px;
+  height: 20px;
+  accent-color: #365d47;
+  flex-shrink: 0;
+}
+.settingToggle strong {
+  display: block;
+  font-size: 14px;
+  margin: 3px 0 8px;
+}
+.settingToggle span > span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #728166;
+}
+.levelSearch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: #728166;
+  max-width: 380px;
+  margin-bottom: 20px;
+}
+.levelSearch input {
+  font: inherit;
+  padding: 12px;
+  width: 100%;
   border: 1px solid #dce2d4;
   border-radius: 7px;
-  font-size: 13px;
+  background: #f7f8f2;
+  color: #304a3e;
+}
+.levelGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+.levelCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 8px;
+  border: 1px solid #dce2d4;
+  border-radius: 9px;
+  background: #f7f8f2;
+  color: #365d47;
+  min-width: 0;
+}
+.levelCard:hover:not(:disabled),
+.levelCard[aria-current] {
+  background: #e8efd9;
+  border-color: #8da46f;
+}
+.levelCard:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.levelCardNumber {
+  font-size: 10px;
+}
+.levelCardGlyph {
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 32px;
+}
+.levelCardTitle {
+  font-size: 11px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+.pagination > span {
+  font-size: 11px;
+  color: #728166;
+  text-align: center;
 }
 .gameLayout {
   display: grid;
@@ -165,7 +280,7 @@
 }
 .glyphWrap {
   width: 100%;
-  max-width: 246px;
+  max-width: 300px;
   text-align: center;
 }
 .glyph {
@@ -583,6 +698,9 @@
   text-underline-offset: 3px;
 }
 @media (max-width: 850px) {
+  .levelGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .header {
     padding: 0 24px;
     height: 78px;
@@ -670,10 +788,21 @@
     justify-content: space-between;
     font-size: 8px;
   }
-  .levelPicker select {
+  .levelPicker button {
     font-size: 11px;
     padding: 10px;
     max-width: 62%;
+  }
+  .campaignPanel {
+    padding: 18px 14px;
+  }
+  .levelGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .pagination .secondaryButton {
+    min-width: 0;
+    padding: 10px;
   }
   .gameLayout {
     grid-template-columns: 1fr;
@@ -683,7 +812,7 @@
     padding: 24px 34px 18px;
   }
   .glyphWrap {
-    max-width: 218px;
+    max-width: 280px;
   }
   .modeTag {
     font-size: 9px;
@@ -714,6 +843,11 @@
     gap: 8px;
     padding-top: 18px;
     margin: 0 24px;
+  }
+}
+@media (max-width: 420px) {
+  .nav a[aria-current] {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
